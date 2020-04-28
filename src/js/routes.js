@@ -1,4 +1,15 @@
 
+// Paginas do aplicativo
+import AboutCovidPage from '../pages/about-covid.f7.html';
+import InfectedPage from '../pages/infected.f7.html';
+import MaskPage from '../pages/mask.f7.html';
+import NewsPage from '../pages/news.f7.html';
+import PreventionPage from '../pages/prevention.f7.html';
+import RiskGroupPage from '../pages/risk-group.f7.html';
+import StatsPage from '../pages/stats.f7.html';
+import SymptomsPage from '../pages/symptoms.f7.html';
+import WhereHelpPage from '../pages/where-help.f7.html';
+
 import HomePage from '../pages/home.f7.html';
 import AboutPage from '../pages/about.f7.html';
 import FormPage from '../pages/form.f7.html';
@@ -15,10 +26,18 @@ var routes = [
     path: '/',
     component: HomePage,
   },
-  {
-    path: '/about/',
-    component: AboutPage,
-  },
+
+  { path: '/infected/', component: InfectedPage },
+  { path: '/about-covid/', component: AboutCovidPage },
+  { path: '/symptoms/', component: SymptomsPage },
+  { path: '/risk-group/', component: RiskGroupPage },
+  { path: '/prevention/', component: PreventionPage },
+  { path: '/where-help/', component: WhereHelpPage },
+  { path: '/stats/', component: StatsPage },
+  { path: '/news/', component: NewsPage },
+  { path: '/mask/', component: MaskPage },
+  { path: '/about/', component: AboutPage },
+
   {
     path: '/form/',
     component: FormPage,
