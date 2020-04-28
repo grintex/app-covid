@@ -18,7 +18,8 @@ jobs:
     - uses: actions/setup-node@v1
       with:
         node-version: '13.5'
-    - run: sudo npm i framework7-cli cordova -g
+    - run: sudo npm install -g --unsafe-perm framework7-cli
+    - run: sudo npm install -g --unsafe-perm cordova
     - name: Extract branch name
       shell: bash
       run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
@@ -34,8 +35,8 @@ jobs:
           mkdir -p ${{ env.BUILD_WEB_DIRECTORY }}/${{ steps.extract_branch.outputs.branch }}/${{ github.sha }}
     - name: Build app
       run: |
-        npm install
-        npm run build-dev
+        sudo npm install
+        sudo npm run build-dev
     - name: Deploy app via SSH
       uses: garygrossgarten/github-action-scp@release
       with:
