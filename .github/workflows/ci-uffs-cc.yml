@@ -4,6 +4,10 @@ on:
     branches:    
       - master
       - dev
+  pull_request:
+    branches:    
+      - master
+      - dev
 env:
   BUILD_HOST: ci.uffs.cc
   BUILD_WEB_DIRECTORY: /home/ccuffsci/ci.uffs.cc/app-covid
