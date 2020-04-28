@@ -1,0 +1,54 @@
+name: ci.uffs.cc
+on:
+  push:
+    branches:    
+      - master
+      - dev
+  pull_request:
+    branches:    
+      - master
+      - dev
+env:
+  BUILD_HOST: ci.uffs.cc
+  BUILD_WEB_DIRECTORY: /home/ccuffsci/ci.uffs.cc/app-covid
+  BUILD_WEB_URL: https://ci.uffs.cc/app-covid
+jobs:
+  build-deploy-audit:
+    name: Build deploy
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '13.5'
+    - run: sudo npm install -g --unsafe-perm framework7-cli
+    - run: sudo npm install -g --unsafe-perm cordova
+    - name: Extract branch name
+      shell: bash
+      run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+      id: extract_branch
+    - name: Prepare deploy server
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ env.BUILD_HOST }}
+        username: ${{ secrets.CI_USERNAME }}
+        password: ${{ secrets.CI_PASSWORD }}
+        port: ${{ secrets.CI_PORT }}
+        script: |
+          mkdir -p ${{ env.BUILD_WEB_DIRECTORY }}/${{ steps.extract_branch.outputs.branch }}/${{ github.sha }}
+    - name: Build app
+      run: |
+        sudo npm install
+        sudo npm run build-dev
+    - name: Deploy app via SSH
+      uses: garygrossgarten/github-action-scp@release
+      with:
+        local: ${{ github.workspace }}/www
+        remote: ${{ env.BUILD_WEB_DIRECTORY }}/${{ steps.extract_branch.outputs.branch }}/${{ github.sha }}/
+        host: ${{ env.BUILD_HOST }}
+        username: ${{ secrets.CI_USERNAME }}
+        password: ${{ secrets.CI_PASSWORD }}
+    - name: Summary
+      run: |
+        echo "Summary:"
+        echo " Live URL: ${{ env.BUILD_WEB_URL }}/${{ steps.extract_branch.outputs.branch }}/${{ github.sha }}"
