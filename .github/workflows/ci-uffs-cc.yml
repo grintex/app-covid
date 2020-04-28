@@ -33,7 +33,6 @@ jobs:
         host: ${{ env.BUILD_HOST }}
         username: ${{ secrets.CI_USERNAME }}
         password: ${{ secrets.CI_PASSWORD }}
-        port: ${{ secrets.CI_PORT }}
         script: |
           mkdir -p ${{ env.BUILD_WEB_DIRECTORY }}/${{ steps.extract_branch.outputs.branch }}/${{ github.sha }}
     - name: Build app
