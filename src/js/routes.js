@@ -2,6 +2,7 @@
 // Paginas do aplicativo
 import AboutCovidPage from '../pages/about-covid.f7.html';
 import InfectedPage from '../pages/infected.f7.html';
+import InfectedQuizPage from '../pages/infected-quiz.f7.html';
 import MaskPage from '../pages/mask.f7.html';
 import NewsPage from '../pages/news.f7.html';
 import PreventionPage from '../pages/prevention.f7.html';
@@ -28,6 +29,15 @@ var routes = [
   },
 
   { path: '/infected/', component: InfectedPage },
+  {
+      path: '/infected/:age/',
+      component: InfectedQuizPage,
+      on: {
+          pageInit: function (event, page) {
+            console.log(page.route.params.age);
+          },
+      },
+  },
   { path: '/about-covid/', component: AboutCovidPage },
   { path: '/symptoms/', component: SymptomsPage },
   { path: '/risk-group/', component: RiskGroupPage },
