@@ -4,6 +4,7 @@ on:
     branches:    
       - master
       - dev
+      - ci-work
 env:
   BUILD_HOST: ci.uffs.cc
   BUILD_WEB_DIRECTORY: /home/ccuffsci/ci.uffs.cc/app-covid
