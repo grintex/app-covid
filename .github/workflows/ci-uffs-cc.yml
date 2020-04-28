@@ -4,14 +4,13 @@ on:
     branches:    
       - master
       - dev
-      - ci-work
 env:
   BUILD_HOST: ci.uffs.cc
   BUILD_WEB_DIRECTORY: /home/ccuffsci/ci.uffs.cc/app-covid
   BUILD_WEB_URL: https://ci.uffs.cc/app-covid
 jobs:
   build-deploy-audit:
-    name: Build, deploy and audit
+    name: Build deploy
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
