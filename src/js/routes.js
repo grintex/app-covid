@@ -37,9 +37,9 @@ var routes = [
     {
         path: '/infected/:age/',
         component: InfectedQuizPage,
-        on: {
-            pageInit: function(event, page) {
-                console.log(page.route.params.age);
+        options: {
+            context: {
+                age: '{{age}}',
             },
         },
     },
@@ -55,8 +55,19 @@ var routes = [
     },
 
     {
-        path: '/risk-group/',
-        component: RiskGroupPage
+        path: '/risk-group/:age/:symptoms?',
+        component: RiskGroupPage,
+        options: {
+            context: {
+                age: '{{age}}',
+                symptoms: '{{symptoms}}'
+            },
+        },
+        on: {
+            pageInit: function (event, page) {
+                console.log(page.params.symptoms);
+            }
+        }
     },
 
     {
