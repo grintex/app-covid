@@ -1,28 +1,23 @@
 <template>
-<div class="page" data-name="infected">
-  <div class="navbar">
-    <div class="navbar-bg"></div>
-    <div class="navbar-inner sliding">
-      <div class="left">
-        <a href="#" class="link back">
-          <i class="icon icon-back"></i>
-          <span class="if-not-md">Back</span>
-        </a>
-      </div>
-      <div class="title">Grupo de risco</div>
+    <div class="page" data-name="infected">
+        <div class="navbar">
+            <div class="navbar-bg"></div>
+            <div class="navbar-inner sliding">
+                <div class="left">
+                    <a href="#" class="link back">
+                        <i class="icon icon-back"></i>
+                        <span class="if-not-md">Back</span>
+                    </a>
+                </div>
+                <div class="title">Grupo de risco</div>
+            </div>
+        </div>
+        <div class="page-content">
+            {{$route.params.age}}
+            {{$route.params.symptoms}}
+        </div>
     </div>
-  </div>
-  <div class="page-content">
-    <div class="block-title">Grupo de risco</div>
-    <div class="block block-strong">
-      <p>Fugiat perspiciatis excepturi, soluta quod non ullam deleniti. Nobis sint nemo consequuntur, fugiat. Eius perferendis animi autem incidunt vel quod tenetur nostrum, voluptate omnis quasi quidem illum consequuntur, a, quisquam.</p>
-    </div>
-    <div class="block">
-      <p>Blanditiis, cumque quo adipisci. Molestiae, dolores dolorum quos doloremque ipsa ullam eligendi commodi deserunt doloribus inventore magni? Ea mollitia veniam nostrum nihil, iusto doloribus a at! Ea molestiae ullam delectus!</p>
-    </div>
-  </div>
-</div>
 </template>
 <script>
-export default {};
+    export default {};
 </script>

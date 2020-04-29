@@ -9,18 +9,216 @@
                         <span class="if-not-md">Back</span>
                     </a>
                 </div>
-                <div class="title">Estou com COVID-19?</div>
+                <div class="title">Faça uma autoavaliação do seu estado de saúde</div>
             </div>
         </div>
 
         <div class="page-content">
+            <div class="block-title-medium">
+                Quais sintomas está sentindo?
+            </div>
 
+            <div class="list no-hairlines">
+                <ul>
+                    <!-- Fever -->
+                    <li>
+                        <label class="item-checkbox item-content">
+                            <input type="checkbox" name="q1" value="s1" />
+                            <i class="icon icon-checkbox"></i>
+                            <div class="item-inner">
+                                <div class="item-title">
+                                    Febre (medida com um termômetro ou não)
+                                </div>
+                            </div>
+                        </label>
+                    </li>
+
+                    <!-- Cough -->
+                    <li>
+                        <label class="item-checkbox item-content">
+                            <input type="checkbox" name="q2" value="s2" />
+                            <i class="icon icon-checkbox"></i>
+                            <div class="item-inner">
+                                <div class="item-title">
+                                    Tosse (recente ou agravando)
+                                </div>
+                            </div>
+                        </label>
+                    </li>
+
+                    <!-- Shortness of breath -->
+                    <li>
+                        <label class="item-checkbox item-content">
+                            <input type="checkbox" name="q3" value="s3" />
+                            <i class="icon icon-checkbox"></i>
+                            <div class="item-inner">
+                                <div class="item-title">
+                                    Falta de ar (recente ou agravando)
+                                </div>
+                            </div>
+                        </label>
+                    </li>
+
+                    <!-- Fatigue -->
+                    <li>
+                        <label class="item-checkbox item-content">
+                            <input type="checkbox" name="q4" value="s4" />
+                            <i class="icon icon-checkbox"></i>
+                            <div class="item-inner">
+                                <div class="item-title">
+                                    Fadiga (cansaço inesperado realizando atividades normais)
+                                </div>
+                            </div>
+                        </label>
+                    </li>
+
+                    <!-- Body ache -->
+                    <li>
+                        <label class="item-checkbox item-content">
+                            <input type="checkbox" name="q5" value="s5" />
+                            <i class="icon icon-checkbox"></i>
+                            <div class="item-inner">
+                                <div class="item-title">
+                                    Dores no corpo
+                                </div>
+                            </div>
+                        </label>
+                    </li>
+
+                    <!-- Headache -->
+                    <li>
+                        <label class="item-checkbox item-content">
+                            <input type="checkbox" name="q6" value="s6" />
+                            <i class="icon icon-checkbox"></i>
+                            <div class="item-inner">
+                                <div class="item-title">
+                                    Dores na cabeça
+                                </div>
+                            </div>
+                        </label>
+                    </li>
+
+                    <!-- Diarrhea -->
+                    <li>
+                        <label class="item-checkbox item-content">
+                            <input type="checkbox" name="q7" value="s7" />
+                            <i class="icon icon-checkbox"></i>
+                            <div class="item-inner">
+                                <div class="item-title">
+                                    Diarreia
+                                </div>
+                            </div>
+                        </label>
+                    </li>
+
+                    <!-- Sore throat -->
+                    <li>
+                        <label class="item-checkbox item-content">
+                            <input type="checkbox" name="q8" value="s8" />
+                            <i class="icon icon-checkbox"></i>
+                            <div class="item-inner">
+                                <div class="item-title">
+                                    Dor na garganta
+                                </div>
+                            </div>
+                        </label>
+                    </li>
+
+                    <!-- Loss of smell or taste -->
+                    <li>
+                        <label class="item-checkbox item-content">
+                            <input type="checkbox" name="q9" value="s9" />
+                            <i class="icon icon-checkbox"></i>
+                            <div class="item-inner">
+                                <div class="item-title">
+                                    Perda do olfato ou paladar (novo ou piorando)
+                                </div>
+                            </div>
+                        </label>
+                    </li>
+
+                    <!-- Nausea or vomiting -->
+                    <li>
+                        <label class="item-checkbox item-content">
+                            <input type="checkbox" name="q10" value="s10" />
+                            <i class="icon icon-checkbox"></i>
+                            <div class="item-inner">
+                                <div class="item-title">
+                                    Náusea ou vômito
+                                </div>
+                            </div>
+                        </label>
+                    </li>
+
+                    <!-- Clogged or runny nose -->
+                    <li>
+                        <label class="item-checkbox item-content">
+                            <input type="checkbox" name="q11" value="s11" />
+                            <i class="icon icon-checkbox"></i>
+                            <div class="item-inner">
+                                <div class="item-title">
+                                    Nariz entupido ou escorrendo
+                                </div>
+                            </div>
+                        </label>
+                    </li>
+
+                    <!-- Other symptoms -->
+                    <li>
+                        <label class="item-checkbox item-content">
+                            <input type="checkbox" name="q12" value="s12" />
+                            <i class="icon icon-checkbox"></i>
+                            <div class="item-inner">
+                                <div class="item-title">
+                                    Outros sintomas
+                                </div>
+                            </div>
+                        </label>
+                    </li>
+
+                    <!-- No symptoms -->
+                    <li>
+                        <label class="item-checkbox item-content">
+                            <input type="checkbox" name="q13" value="s13" />
+                            <i class="icon icon-checkbox"></i>
+                            <div class="item-inner">
+                                <div class="item-title">
+                                    Nenhum sintoma
+                                </div>
+                            </div>
+                        </label>
+                    </li>
+                </ul>
+
+                <div class="">
+                    <a class="button button-fill button-large" @click="handleClick">Continuar</a>
+                </div>
+            </div>
         </div>
     </div>
 </template>
 
 <script>
     export default {
+        data: function() {
+            return {
+                symptoms: [],
+            }
+        },
 
+        methods: {
+            handleClick: function() {
+                document.querySelectorAll("input[type='checkbox']:checked")
+                .forEach(item => {
+                    this.symptoms.push(item.value);
+                });
+
+                console.log(this.symptoms, this.$route.params.age);
+
+                this.$router.navigate("/risk-group/"
+                    + this.$route.params.age + "/"
+                    + this.symptoms);
+            },
+        },
     };
 </script>
