@@ -1,5 +1,5 @@
 <template>
-    <div class="page" data-name="infected">
+    <div class="page" data-name="risks">
         <div class="navbar">
             <div class="navbar-bg"></div>
             <div class="navbar-inner sliding">
@@ -9,15 +9,231 @@
                         <span class="if-not-md">Back</span>
                     </a>
                 </div>
-                <div class="title">Grupo de risco</div>
+                <div class="title">Grupos de risco</div>
             </div>
         </div>
         <div class="page-content">
-            {{$route.params.age}}
-            {{$route.params.symptoms}}
+            <div class="block block-title-medium">
+                Você tem alguma dessas condições?
+            </div>
+
+            {{#js_if "this.$route.params.age == 'adult'"}}
+                <div class="list no-hairlines" id="riskQuiz">
+                    <ul>
+                        <!--  -->
+                        <li>
+                            <label class="item-checkbox item-content">
+                                <input type="checkbox" name="q1" value="r1" />
+                                <i class="icon icon-checkbox"></i>
+                                <div class="item-inner">
+                                    <div class="item-title">
+                                        Tem mais de 60 anos
+                                    </div>
+                                </div>
+                            </label>
+                        </li>
+
+                        <!--  -->
+                        <li>
+                            <label class="item-checkbox item-content">
+                                <input type="checkbox" name="q2" value="r2" />
+                                <i class="icon icon-checkbox"></i>
+                                <div class="item-inner">
+                                    <div class="item-title">
+                                        Está grávida
+                                    </div>
+                                </div>
+                            </label>
+                        </li>
+
+                        <!--  -->
+                        <li>
+                            <label class="item-checkbox item-content">
+                                <input type="checkbox" name="q3" value="r3" />
+                                <i class="icon icon-checkbox"></i>
+                                <div class="item-inner">
+                                    <div class="item-title">
+                                        Diabetes
+                                    </div>
+                                </div>
+                            </label>
+                        </li>
+
+                        <!--  -->
+                        <li>
+                            <label class="item-checkbox item-content">
+                                <input type="checkbox" name="q4" value="r4" />
+                                <i class="icon icon-checkbox"></i>
+                                <div class="item-inner">
+                                    <div class="item-title">
+                                        Doença do pulmão
+                                    </div>
+                                </div>
+                            </label>
+                        </li>
+
+                        <!--  -->
+                        <li>
+                            <label class="item-checkbox item-content">
+                                <input type="checkbox" name="q5" value="r5" />
+                                <i class="icon icon-checkbox"></i>
+                                <div class="item-inner">
+                                    <div class="item-title">
+                                        Doença do coração
+                                    </div>
+                                </div>
+                            </label>
+                        </li>
+
+                        <!--  -->
+                        <li>
+                            <label class="item-checkbox item-content">
+                                <input type="checkbox" name="q6" value="r6" />
+                                <i class="icon icon-checkbox"></i>
+                                <div class="item-inner">
+                                    <div class="item-title">
+                                        Doença do rim
+                                    </div>
+                                </div>
+                            </label>
+                        </li>
+
+                        <!--  -->
+                        <li>
+                            <label class="item-checkbox item-content">
+                                <input type="checkbox" name="q7" value="r7" />
+                                <i class="icon icon-checkbox"></i>
+                                <div class="item-inner">
+                                    <div class="item-title">
+                                        Transplante
+                                    </div>
+                                </div>
+                            </label>
+                        </li>
+
+                        <!--  -->
+                        <li>
+                            <label class="item-checkbox item-content">
+                                <input type="checkbox" name="q8" value="r8" />
+                                <i class="icon icon-checkbox"></i>
+                                <div class="item-inner">
+                                    <div class="item-title">
+                                        Usa medicação para reumatismo (corticoide/imunossupressor)
+                                    </div>
+                                </div>
+                            </label>
+                        </li>
+
+                        <!--  -->
+                        <li>
+                            <label class="item-checkbox item-content">
+                                <input type="checkbox" name="q9" value="r9" />
+                                <i class="icon icon-checkbox"></i>
+                                <div class="item-inner">
+                                    <div class="item-title">
+                                        HIV/AIDS
+                                    </div>
+                                </div>
+                            </label>
+                        </li>
+
+                        <!--  -->
+                        <li>
+                            <label class="item-checkbox item-content">
+                                <input type="checkbox" name="q10" value="r10" />
+                                <i class="icon icon-checkbox"></i>
+                                <div class="item-inner">
+                                    <div class="item-title">
+                                        Câncer
+                                    </div>
+                                </div>
+                            </label>
+                        </li>
+
+                        <!--  -->
+                        <li>
+                            <label class="item-checkbox item-content">
+                                <input type="checkbox" name="q11" value="r11" />
+                                <i class="icon icon-checkbox"></i>
+                                <div class="item-inner">
+                                    <div class="item-title">
+                                        Quimioterapia
+                                    </div>
+                                </div>
+                            </label>
+                        </li>
+
+                        <!--  -->
+                        <li>
+                            <label class="item-checkbox item-content">
+                                <input type="checkbox" name="q12" value="r12" />
+                                <i class="icon icon-checkbox"></i>
+                                <div class="item-inner">
+                                    <div class="item-title">
+                                        Cirurgia de grande porte nos últimos 30 dias
+                                    </div>
+                                </div>
+                            </label>
+                        </li>
+
+                        <!--  -->
+                        <li>
+                            <label class="item-checkbox item-content">
+                                <input type="checkbox" name="q13" value="r13" />
+                                <i class="icon icon-checkbox"></i>
+                                <div class="item-inner">
+                                    <div class="item-title">
+                                        Não me encaixo nessas condições
+                                    </div>
+                                </div>
+                            </label>
+                        </li>
+                    </ul>
+
+                    <div
+                        class=" block
+                            display-flex
+                            flex-direction-column
+                            justify-content-center
+                            align-content-space-around"
+                    >
+                        <a
+                            class="button
+                                button-fill
+                                button-large
+                                margin-top"
+                            @click="handleClick"
+                        >
+                            Continuar
+                        </a>
+                    </div>
+                </div>
+                {{else}}
+
+            {{/js_if}}
         </div>
     </div>
 </template>
 <script>
-    export default {};
+    export default {
+        data: function() {
+            return {
+                risks: [],
+            }
+        },
+
+        methods: {
+            handleClick: function() {
+                document.querySelectorAll("#riskQuiz input[type='checkbox']:checked")
+                    .forEach(item => {
+                        this.risks.push(item.value);
+                    });
+
+                this.$router.navigate("/diagnosis/" +
+                    this.$route.params.age + "/" +
+                    this.$route.params.symptoms + "/" +
+                    this.risks);
+            },
+        },
+    };
 </script>

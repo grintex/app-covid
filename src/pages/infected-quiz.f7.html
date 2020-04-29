@@ -1,5 +1,5 @@
 <template>
-    <div class="page" data-name="infected">
+    <div class="page" data-name="infected-quiz">
         <div class="navbar">
             <div class="navbar-bg"></div>
             <div class="navbar-inner sliding">
@@ -14,11 +14,11 @@
         </div>
 
         <div class="page-content">
-            <div class="block-title-medium">
+            <div class="block block-title-medium">
                 Quais sintomas está sentindo?
             </div>
 
-            <div class="list no-hairlines">
+            <div class="list no-hairlines" id="infectedQuiz">
                 <ul>
                     <!-- Fever -->
                     <li>
@@ -191,7 +191,8 @@
                 </ul>
 
                 <div
-                    class="display-flex
+                    class="block
+                        display-flex
                         flex-direction-column
                         justify-content-center
                         align-content-space-around"
@@ -238,12 +239,10 @@
 
         methods: {
             handleClick: function() {
-                document.querySelectorAll("input[type='checkbox']:checked")
+                document.querySelectorAll("#infectedQuiz input[type='checkbox']:checked")
                     .forEach(item => {
                         this.symptoms.push(item.value);
                     });
-
-                console.log(this.symptoms, this.$route.params.age);
 
                 this.$router.navigate("/risk-group/" +
                     this.$route.params.age + "/" +
