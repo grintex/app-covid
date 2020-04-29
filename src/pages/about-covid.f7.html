@@ -13,7 +13,7 @@
 			</div>
 		</div>
 		<div class="page-content">
-			<div class="swiper-container">
+			<div data-pagination="{'el' : '.swiper-pagination'}" data-space-between="15" class="swiper-container swiper-init">
 				<div class="swiper-wrapper">
 					<div class="swiper-slide">
 						<div class="slide-title">
@@ -44,7 +44,8 @@
 					</div>
 
 					<div class="swiper-slide">
-						<div class="slide-title margin-top">
+						<div class="slide-title">
+							<img src="static/images/transmission.svg" class="slide-title__icon margin-top" alt="cough">
 							Como é transmitido?
 						</div>
 						<div class="block">
@@ -69,7 +70,7 @@
 									<img src="static/images/contamined.svg" class="transmitter__icon" alt="contamined">
 									<li class="name-contamined">
 										Objetos ou superfícies contaminadas 
-										<a href="#" class="contamined-info">
+										<a href="#" class="contamined-info tooltip-init" data-tooltip="Celulares, mesas, maçanetas, teclados de computador, etc">
 											<i class="icon material-icons color-black">info</i>
 										</a>
 									</li>
@@ -79,8 +80,8 @@
 					</div>
 					<div class="swiper-slide">
 						<div class="slide-title">
-							<img src="static/images/calendar.svg" class="slide-title__icon margin-top" alt="cough">
-							Período de Incubaçao
+							<img src="static/images/calendar.svg" class="slide-title__icon margin-top" alt="calendar">
+							Período de Incubação
 						</div>
 
 						<div class="block">
@@ -92,13 +93,17 @@
 						</div>
 					</div>
 					<div class="swiper-slide">
-						<div class="block-title">
+						<div class="slide-title">
+							<img src="static/images/stay_athome.svg" class="slide-title__icon margin-top" alt="stay_athome">
 							Para que serve o distanciamento social?
 						</div>
 
-						<div class="block block">
+						<div class="block">
 							<p>
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis soluta nostrum tenetur assumenda, saepe eaque doloremque esse! Veniam magnam minima ipsam libero neque fuga dolorum! Aut incidunt modi sed aperiam.
+								As medidas de <strong>distanciamento social</strong> visam reduzir a transmissão do vírus,
+								contendo o aumento do número de casos, e assim, reduzindo a necessidade de
+								atendimento médico e internações, <strong>evitando uma sobrecarga</strong> do sistema de
+								saúde. (Ministério da Saúde)
 							</p>
 						</div>
 					</div>
@@ -108,22 +113,7 @@
 	</div>
 </template>
 <script>
-
-	export default {
-		mounted: function(){
-
-			this.$app.swiper.create('.swiper-container', {
-				speed: 300,
-				spaceBetween: 15
-			});
-
-			this.$app.tooltip.create({
-				targetEl: '.contamined-info',
-				text: 'Celulares, mesas, maçanetas, teclados de computador, etc',
-				offset: '20'
-			});
-		}
-	};
+	export default {};
 </script>
 
 <style scoped>
