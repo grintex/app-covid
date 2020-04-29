@@ -2,6 +2,7 @@
 import AboutCovidPage from '../pages/about-covid.f7.html';
 import InfectedPage from '../pages/infected.f7.html';
 import InfectedQuizPage from '../pages/infected-quiz.f7.html';
+import DiagnosisPage from '../pages/diagnosis.f7.html';
 import MaskPage from '../pages/mask.f7.html';
 import NewsPage from '../pages/news.f7.html';
 import PreventionPage from '../pages/prevention.f7.html';
@@ -37,9 +38,9 @@ var routes = [
     {
         path: '/infected/:age/',
         component: InfectedQuizPage,
-        on: {
-            pageInit: function(event, page) {
-                console.log(page.route.params.age);
+        options: {
+            context: {
+                age: '{{age}}',
             },
         },
     },
@@ -55,8 +56,32 @@ var routes = [
     },
 
     {
-        path: '/risk-group/',
-        component: RiskGroupPage
+        path: '/risk-group/:age/:symptoms',
+        component: RiskGroupPage,
+        options: {
+            context: {
+                age: '{{age}}',
+                symptoms: '{{symptoms}}'
+            },
+        },
+
+        on: {
+            pageInit: function (event, page) {
+                console.log(page.route.params.age);
+            }
+        }
+    },
+
+    {
+        path: '/diagnosis/:age/:symptoms/:risks',
+        component: DiagnosisPage,
+        options: {
+            context: {
+                age: '{{age}}',
+                symptoms: '{{symptoms}}',
+                risks: '{{risks}}',
+            }
+        }
     },
 
     {
