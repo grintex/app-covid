@@ -4,48 +4,75 @@
 		<div class="navbar-bg"></div>
 			<div class="navbar-inner sliding">
 				<div class="left">
-						<a href="#" class="link back">
-							<i class="icon icon-back"></i>
-							<span class="if-not-md">Back</span>
-						</a>
+					<a href="#" class="link back">
+						<i class="icon icon-back"></i>
+						<span class="if-not-md">Back</span>
+					</a>
 				</div>
 				<div class="title">Sobre a COVID-19</div>
 			</div>
 		</div>
 		<div class="page-content">
-			<div class="swiper-container about">
+			<div class="swiper-container">
 				<div class="swiper-wrapper">
 					<div class="swiper-slide">
-						<div class="block-title">O que é a COVID-19?</div>
-						
-						<div class="block block">
+						<div class="slide-title">
+							<img src="static/images/cough_women.svg" class="slide-title__icon" alt="cough">
+							O que é a COVID-19?
+						</div>
+						<div class="block">
 							<p>
 								A <strong>COVID-19</strong> é uma doença causada pelo coronavírus <strong>SARS-CoV-2</strong>, que
 								apresenta um quadro clínico que varia de infecções assintomáticas a quadros
 								respiratórios graves. (Ministério da Saúde)
 							</p>
 						</div>
-
 					</div>
 
 					<div class="swiper-slide">
-						<div class="block-title">O que é o Coronavírus?</div>
-						
-						<div class="block block">
+						<div class="slide-title">
+							<img src="static/images/coronavirus.svg" class="slide-title__icon" alt="cough">
+							O que é o coronavírus?
+						</div>
+						<div class="block">
 							<p>
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis soluta nostrum tenetur assumenda, saepe eaque doloremque esse! Veniam magnam minima ipsam libero neque fuga dolorum! Aut incidunt modi sed aperiam.
+								<strong>Coronavírus</strong> é uma família de vírus que causam infecções respiratórias. O novo
+								coronavírus é denominado como <strong>SARS-CoV-2</strong> e provoca a doença chamada de
+								<strong>COVID-19</strong>. (Ministério da Saúde)
 							</p>
 						</div>
 					</div>
+
 					<div class="swiper-slide">
-						<div class="block-title">
+						<div class="slide-title">
 							Como é transmitido?
 						</div>
-
-						<div class="block block">
+						<div class="block">
 							<p>
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis soluta nostrum tenetur assumenda, saepe eaque doloremque esse! Veniam magnam minima ipsam libero neque fuga dolorum! Aut incidunt modi sed aperiam.
+								A transmissão acontece de uma pessoa doente para outra por contato próximo
+								por meio de:
 							</p>
+							<ol class="transmitters">
+								<div class="transmitter">
+									<img src="static/images/handshake.svg" class="transmitter__icon" alt="handshake">
+									<li class="name"> Aperto de mão </li>
+								</div>
+								<div class="transmitter">
+									<img src="static/images/sneeze.svg" class="transmitter__icon" alt="sneeze">
+									<li class="name"> Espirro </li>
+								</div>
+								<div class="transmitter">
+									<img src="static/images/cough.svg" class="transmitter__icon" alt="cough">
+									<li class="name"> Tosse </li>
+								</div>
+								<div class="transmitter">
+									<img src="static/images/contamined.svg" class="transmitter__icon" alt="contamined">
+									<li class="name-contamined">
+										Objetos ou superfícies contaminadas 
+										<i class="icon material-icons color-black contamined-info">info</i>
+									</li>
+								</div>
+							</ol>
 						</div>
 					</div>
 					<div class="swiper-slide">
@@ -53,7 +80,7 @@
 							Período de Incubação
 						</div>
 
-						<div class="block block">
+						<div class="block">
 							<p>
 								Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis soluta nostrum tenetur assumenda, saepe eaque doloremque esse! Veniam magnam minima ipsam libero neque fuga dolorum! Aut incidunt modi sed aperiam.
 							</p>
@@ -84,18 +111,64 @@
 				speed: 300,
 				spaceBetween: 15
 			});
+
+			this.$app.tooltip.create({
+				targetEl: '.contamined-info',
+				text: 'Celulares, mesas, maçanetas, teclados de computador, etc',
+				offset: '20'
+			});
 		}
 	};
 </script>
 
 <style scoped>
 
-	.swipe-slide {
-		padding: 1%;
+	.slide-title {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin-top: 5%;
 	}
 
-	ul {
-		padding-left: 20px;
+	.slide-title__icon {
+		height: 55px;	
+	}
+
+	.transmitters {
+		padding: 10px;
+		display: grid;
+		grid-template-columns: repeat(auto-fill, calc(50% - 5px));
+		grid-gap: 10px;
 	}
 	
+	.transmitter {
+		display: flex;
+		flex-direction: column;
+		background-color: #f6f6f6;
+		align-items: center;
+		text-transform: uppercase;
+		color: #1e2f42;
+		font-weight: bold;
+		padding: 10px;
+	}
+
+	.transmitter__icon {
+		height: 55px;
+	}
+
+	.name {
+		margin-top: 5px;
+	}
+
+	.name-contamined {
+		margin-left: 12px;
+		line-height: 13px;
+		font-size: 11px;
+		margin-top: 7px;
+	}
+
+	.contamined-info {
+		font-size: 17px;
+	}
+
 </style>
