@@ -1,165 +1,145 @@
 <template>
   <div class="page" data-name="home">
     <!-- Top Navbar -->
-    <div class="navbar navbar-large">
+    <div class="navbar">
       <div class="navbar-bg"></div>
       <div class="navbar-inner">
-        <div class="left">
-          <a href="#" class="link icon-only panel-open" data-panel="left">
-            <i class="icon f7-icons if-not-md">menu</i>
-            <i class="icon material-icons if-md">menu</i>
-          </a>
-        </div>
-        <div class="title sliding">coronavirus-chapeco</div>
-        <div class="right">
-          <a href="#" class="link icon-only panel-open" data-panel="right">
-            <i class="icon f7-icons if-not-md">menu</i>
-            <i class="icon material-icons if-md">menu</i>
-          </a>
-        </div>
         <div class="title-large">
-          <div class="title-large-text">coronavirus-chapeco</div>
+          <div class="title-large-text">Corona Vírus</div>
         </div>
       </div>
     </div>
 
     <!-- Scrollable page content-->
     <div class="page-content">
-      <div class="block block-strong">
-        <p>This is an example of tabs-layout application. The main point of such tabbed layout is that each tab contains independent view with its own routing and navigation.</p>
-
-        <p>Each tab/view may have different layout, different navbar type (dynamic, fixed or static) or without navbar like this tab.</p>
-      </div>
-
-      <div class="block-title">Páginas do app</div>
-      <div class="list">
-        <ul>
-            <li>
-                <a href="/infected/" class="item-content item-link">
-                    <div class="item-inner">
-                      <div class="item-title">Estou com COVID-19?</div>
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="/about-covid/" class="item-content item-link">
-                    <div class="item-inner">
-                      <div class="item-title">Sobre a COVID-19</div>
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="/symptoms/" class="item-content item-link">
-                    <div class="item-inner">
-                      <div class="item-title">Sintomas</div>
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="/risk-group/" class="item-content item-link">
-                    <div class="item-inner">
-                      <div class="item-title">Grupo de risco</div>
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="/prevention/" class="item-content item-link">
-                    <div class="item-inner">
-                      <div class="item-title">Medidas de prevenção</div>
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="/where-help/" class="item-content item-link">
-                    <div class="item-inner">
-                      <div class="item-title">Onde procurar atendimento</div>
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="/stats/" class="item-content item-link">
-                    <div class="item-inner">
-                      <div class="item-title">Estatísticas</div>
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="/news/" class="item-content item-link">
-                    <div class="item-inner">
-                      <div class="item-title">Notícias</div>
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="/mask/" class="item-content item-link">
-                    <div class="item-inner">
-                      <div class="item-title">Como fazer sua máscara</div>
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="/about/" class="item-content item-link">
-                  <div class="item-inner">
-                    <div class="item-title">Sobre o aplicativo</div>
-                  </div>
-                </a>
-            </li>
-        </ul>
-      </div>
-
-      <div class="block-title">Navigation</div>
-      <div class="list">
-        <ul>
-          <li>
-            <a href="/form/" class="item-content item-link">
-              <div class="item-inner">
-                <div class="item-title">Form</div>
-              </div>
-            </a>
-          </li>
-        </ul>
-      </div>
-
-      <div class="block-title">Modals</div>
-      <div class="block block-strong">
-        <div class="row">
-          <div class="col-50">
-            <a href="#" class="button button-raised button-fill popup-open" data-popup="#my-popup">Popup</a>
+      <div class="menu-grid">
+        <a href="/infected/" class="menu-grid__item">
+          <div class="item-inner">
+            <img
+              src="static/images/question.svg"
+              class="menu-grid__icon"
+            >
+            <div class="item-title">Estou com COVID-19?</div>
           </div>
-          <div class="col-50">
-            <a href="#" class="button button-raised button-fill login-screen-open" data-login-screen="#my-login-screen">Login Screen</a>
-          </div>
-        </div>
-      </div>
+        </a>
 
-      <div class="block-title">Panels</div>
-      <div class="block block-strong">
-        <div class="row">
-          <div class="col-50">
-            <a href="#" class="button button-raised button-fill panel-open" data-panel="left">Left Panel</a>
+        <a href="/about-covid/" class="menu-grid__item">
+          <div class="item-inner">
+            <img
+              src="static/images/coronavirus.svg"
+              class="menu-grid__icon"
+            >
+            <div class="item-title">Sobre a COVID-19</div>
           </div>
-          <div class="col-50">
-            <a href="#" class="button button-raised button-fill panel-open" data-panel="right">Right Panel</a>
-          </div>
-        </div>
-      </div>
+        </a>
 
-      <div class="list links-list">
-        <ul>
-          <li>
-            <a href="/dynamic-route/blog/45/post/125/?foo=bar#about">Dynamic (Component) Route</a>
-          </li>
-          <li>
-            <a href="/load-something-that-doesnt-exist/">Default Route (404)</a>
-          </li>
-          <li>
-            <a href="/request-and-load/user/123456/">Request Data & Load</a>
-          </li>
-        </ul>
+        <a href="/symptoms/" class="menu-grid__item">
+          <div class="item-inner">
+            <img
+              src="static/images/cough.svg"
+              class="menu-grid__icon"
+            >
+            <div class="item-title">Sintomas</div>
+          </div>
+        </a>
+
+        <a href="/risk-group/" class="menu-grid__item">
+          <div class="item-inner">
+            <img
+              src="static/images/couple.svg"
+              class="menu-grid__icon"
+            >
+            <div class="item-title">Grupo de risco</div>
+          </div>
+        </a>
+
+        <a href="/prevention/" class="menu-grid__item">
+          <div class="item-inner">
+            <img
+              src="static/images/hand-wash.svg"
+              class="menu-grid__icon"
+            >
+            <div class="item-title">Medidas de prevenção</div>
+          </div>
+        </a>
+
+        <a href="/where-help/" class="menu-grid__item">
+          <div class="item-inner">
+            <img
+              src="static/images/hospital-building.svg"
+              class="menu-grid__icon"
+            >
+            <div class="item-title">Onde procurar atendimento</div>
+          </div>
+        </a>
+
+        <a href="/stats/" class="menu-grid__item">
+          <div class="item-inner">
+            <img
+              src="static/images/bar-chart.svg"
+              class="menu-grid__icon"
+            >
+            <div class="item-title">Estatísticas</div>
+          </div>
+        </a>
+
+        <a href="/news/" class="menu-grid__item">
+          <div class="item-inner">
+            <img
+              src="static/images/newspaper.svg"
+              class="menu-grid__icon"
+            >
+            <div class="item-title">Notícias</div>
+          </div>
+        </a>
+
+        <a href="/mask/" class="menu-grid__item">
+          <div class="item-inner">
+            <img
+              src="static/images/medical-mask.svg"
+              class="menu-grid__icon"
+            >
+            <div class="item-title">Como fazer sua máscara</div>
+          </div>
+        </a>
+
+        <a href="/about/" class="menu-grid__item">
+          <div class="item-inner">
+            <img
+              src="static/images/information.svg"
+              class="menu-grid__icon"
+            >
+            <div class="item-title">Sobre o aplicativo</div>
+          </div>
+        </a>
       </div>
     </div>
   </div>
 </template>
+
 <script>
-export default {}
+  export default {
+  }
 </script>
+
+<style>
+  .menu-grid {
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, calc(50% - 5px));
+    grid-gap: 10px;
+  }
+
+  .menu-grid__item {
+    background-color: #f6f6f6;
+    text-align: center;
+    text-transform: uppercase;
+    color: #1e2f42;
+    font-weight: bold;
+    padding: 10px;
+  }
+
+  .menu-grid__icon {
+    height: 55px;
+  }
+</style>

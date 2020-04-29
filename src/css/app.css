@@ -9,6 +9,7 @@
   --f7-theme-color-rgb: 0, 111, 60;
   --f7-theme-color-shade: #004626;
   --f7-theme-color-tint: #009852;
+  --f7-page-bg-color: #fff;
 }
 
 /* Invert navigation bars to fill style */
