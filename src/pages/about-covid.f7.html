@@ -1,28 +1,101 @@
 <template>
-<div class="page" data-name="infected">
-  <div class="navbar">
-    <div class="navbar-bg"></div>
-    <div class="navbar-inner sliding">
-      <div class="left">
-        <a href="#" class="link back">
-          <i class="icon icon-back"></i>
-          <span class="if-not-md">Back</span>
-        </a>
-      </div>
-      <div class="title">Sobre COVID-19</div>
-    </div>
-  </div>
-  <div class="page-content">
-    <div class="block-title">Sobre COVID-19</div>
-    <div class="block block-strong">
-      <p>Fugiat perspiciatis excepturi, soluta quod non ullam deleniti. Nobis sint nemo consequuntur, fugiat. Eius perferendis animi autem incidunt vel quod tenetur nostrum, voluptate omnis quasi quidem illum consequuntur, a, quisquam.</p>
-    </div>
-    <div class="block">
-      <p>Blanditiis, cumque quo adipisci. Molestiae, dolores dolorum quos doloremque ipsa ullam eligendi commodi deserunt doloribus inventore magni? Ea mollitia veniam nostrum nihil, iusto doloribus a at! Ea molestiae ullam delectus!</p>
-    </div>
-  </div>
-</div>
+	<div class="page" data-name="infected">
+		<div class="navbar">
+		<div class="navbar-bg"></div>
+			<div class="navbar-inner sliding">
+				<div class="left">
+						<a href="#" class="link back">
+							<i class="icon icon-back"></i>
+							<span class="if-not-md">Back</span>
+						</a>
+				</div>
+				<div class="title">Sobre a COVID-19</div>
+			</div>
+		</div>
+		<div class="page-content">
+			<div class="swiper-container about">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<div class="block-title">O que é a COVID-19?</div>
+						
+						<div class="block block">
+							<p>
+								A <strong>COVID-19</strong> é uma doença causada pelo coronavírus <strong>SARS-CoV-2</strong>, que
+								apresenta um quadro clínico que varia de infecções assintomáticas a quadros
+								respiratórios graves. (Ministério da Saúde)
+							</p>
+						</div>
+
+					</div>
+
+					<div class="swiper-slide">
+						<div class="block-title">O que é o Coronavírus?</div>
+						
+						<div class="block block">
+							<p>
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis soluta nostrum tenetur assumenda, saepe eaque doloremque esse! Veniam magnam minima ipsam libero neque fuga dolorum! Aut incidunt modi sed aperiam.
+							</p>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="block-title">
+							Como é transmitido?
+						</div>
+
+						<div class="block block">
+							<p>
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis soluta nostrum tenetur assumenda, saepe eaque doloremque esse! Veniam magnam minima ipsam libero neque fuga dolorum! Aut incidunt modi sed aperiam.
+							</p>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="block-title">
+							Período de Incubação
+						</div>
+
+						<div class="block block">
+							<p>
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis soluta nostrum tenetur assumenda, saepe eaque doloremque esse! Veniam magnam minima ipsam libero neque fuga dolorum! Aut incidunt modi sed aperiam.
+							</p>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="block-title">
+							Para que serve o distanciamento social?
+						</div>
+
+						<div class="block block">
+							<p>
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis soluta nostrum tenetur assumenda, saepe eaque doloremque esse! Veniam magnam minima ipsam libero neque fuga dolorum! Aut incidunt modi sed aperiam.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </template>
 <script>
-export default {};
+
+	export default {
+		mounted: function(){
+
+			this.$app.swiper.create('.swiper-container', {
+				speed: 300,
+				spaceBetween: 15
+			});
+		}
+	};
 </script>
+
+<style scoped>
+
+	.swipe-slide {
+		padding: 1%;
+	}
+
+	ul {
+		padding-left: 20px;
+	}
+	
+</style>
