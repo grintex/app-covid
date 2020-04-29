@@ -190,8 +190,38 @@
                     </li>
                 </ul>
 
-                <div class="">
-                    <a class="button button-fill button-large" @click="handleClick">Continuar</a>
+                <div
+                    class="display-flex
+                        flex-direction-column
+                        justify-content-center
+                        align-content-space-around"
+                >
+                    <a href="/symptoms/" class="card">
+                        <div
+                            class="card-content
+                                card-content-padding
+                                display-flex
+                                flex-direction-column
+                                justify-content-center
+                                align-content-space-around"
+                        >
+                            <img src="static/images/doubt.svg" class=" card__icon">
+                            <div class="block-title text-align-center">
+                                Você tem dúvidas sobre os sintomas?
+                            </div>
+
+                        </div>
+                    </a>
+
+                    <a
+                        class="button
+                            button-fill
+                            button-large
+                            margin-top"
+                        @click="handleClick"
+                    >
+                        Continuar
+                    </a>
                 </div>
             </div>
         </div>
@@ -209,16 +239,22 @@
         methods: {
             handleClick: function() {
                 document.querySelectorAll("input[type='checkbox']:checked")
-                .forEach(item => {
-                    this.symptoms.push(item.value);
-                });
+                    .forEach(item => {
+                        this.symptoms.push(item.value);
+                    });
 
                 console.log(this.symptoms, this.$route.params.age);
 
-                this.$router.navigate("/risk-group/"
-                    + this.$route.params.age + "/"
-                    + this.symptoms);
+                this.$router.navigate("/risk-group/" +
+                    this.$route.params.age + "/" +
+                    this.symptoms);
             },
         },
     };
 </script>
+
+<style>
+    .card__icon {
+        height: 55px;
+    }
+</style>
