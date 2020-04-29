@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 496 496" style="enable-background:new 0 0 496 496;" xml:space="preserve">
+<rect x="56" y="280" style="fill:#AFB8C9;" width="384" height="208"/>
+<rect x="120" y="280" style="fill:#8C95A4;" width="256" height="208"/>
+<polygon style="fill:#FB5968;" points="352,248 144,248 32,248 32,280 144,280 352,280 464,280 464,248 "/>
+<polygon style="fill:#CD2C5A;" points="186.368,280 120,280 120,248 186.368,248 309.632,248 376,248 376,280 309.632,280 "/>
+<rect x="56" y="280" style="fill:#8C95A4;" width="384" height="24"/>
+<polygon style="fill:#ECECEC;" points="304,104 192,104 144,104 144,488 352,488 352,104 "/>
+<rect x="192" y="384" style="fill:#39C3FC;" width="112" height="104"/>
+<rect x="144" y="136" style="fill:#FB5968;" width="208" height="32"/>
+<circle style="fill:#92E0C0;" cx="248" cy="72" r="64"/>
+<g>
+	<polygon style="fill:#148CE0;" points="280,384 304,384 304,488 272,488 	"/>
+	<polygon style="fill:#148CE0;" points="224,384 248,384 248,488 216,488 	"/>
+</g>
+<path d="M360,176h32v-16h-32V96h-44.2c2.672-7.52,4.2-15.576,4.2-24c0-39.696-32.296-72-72-72s-72,32.304-72,72
+	c0,8.424,1.528,16.48,4.2,24H136v64h-32v16h32v64H24v48h24v192H32v16h432v-16h-16V288h24v-48H360V176z M344,112v16h-50.848
+	c5.656-4.568,10.616-9.952,14.672-16H344z M248,16c30.872,0,56,25.12,56,56s-25.128,56-56,56s-56-25.12-56-56S217.128,16,248,16z
+	 M188.176,112c4.056,6.048,9.016,11.432,14.672,16H152v-16H188.176z M152,144h192v16H152V144z M344,176v304h-32V376H184v104h-32V176
+	H344z M256,392h40v88h-40V392z M240,480h-40v-88h40V480z M40,256h96v16H40V256z M64,288h72v192H64V288z M432,480h-72V288h72V480z
+	 M456,256v16h-96v-16H456z"/>
+<polygon points="240,112 256,112 256,80 288,80 288,64 256,64 256,32 240,32 240,64 208,64 208,80 240,80 "/>
+<rect x="376" y="312" width="40" height="16"/>
+<rect x="376" y="344" width="40" height="16"/>
+<rect x="376" y="376" width="40" height="16"/>
+<rect x="376" y="408" width="40" height="16"/>
+<rect x="376" y="440" width="40" height="16"/>
+<rect x="80" y="312" width="40" height="16"/>
+<rect x="80" y="344" width="40" height="16"/>
+<rect x="80" y="376" width="40" height="16"/>
+<rect x="80" y="408" width="40" height="16"/>
+<rect x="80" y="440" width="40" height="16"/>
+<rect y="480" width="16" height="16"/>
+<rect x="480" y="480" width="16" height="16"/>
+<rect x="184" y="208" width="16" height="16"/>
+<rect x="184" y="248" width="16" height="16"/>
+<rect x="184" y="288" width="16" height="16"/>
+<rect x="184" y="328" width="16" height="16"/>
+<rect x="240" y="208" width="16" height="16"/>
+<rect x="240" y="248" width="16" height="16"/>
+<rect x="240" y="288" width="16" height="16"/>
+<rect x="240" y="328" width="16" height="16"/>
+<rect x="296" y="208" width="16" height="16"/>
+<rect x="296" y="248" width="16" height="16"/>
+<rect x="296" y="288" width="16" height="16"/>
+<rect x="296" y="328" width="16" height="16"/>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg>
