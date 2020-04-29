@@ -16,8 +16,15 @@
 			<div class="swiper-container about">
 				<div class="swiper-wrapper">
 					<div class="swiper-slide">
-						<div class="block-title">O que é a COVID-19?</div>
-						
+
+						<div class="swiper-title">
+							<img src="static/images/cough_women.svg" class="swiper-title__icon" alt="cough">
+							
+							<div>
+								O que é a COVID-19?
+							</div>
+						</div>
+							
 						<div class="block block">
 							<p>
 								A <strong>COVID-19</strong> é uma doença causada pelo coronavírus <strong>SARS-CoV-2</strong>, que
@@ -90,12 +97,15 @@
 
 <style scoped>
 
-	.swipe-slide {
-		padding: 1%;
+	.swiper-title {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin-top: 5%;
 	}
 
-	ul {
-		padding-left: 20px;
+	.swiper-title__icon {
+		height: 55px;	
 	}
 	
 </style>
