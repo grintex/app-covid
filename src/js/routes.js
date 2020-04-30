@@ -7,6 +7,8 @@ import MaskPage from '../pages/mask.f7.html';
 import NewsPage from '../pages/news.f7.html';
 import PreventionPage from '../pages/prevention.f7.html';
 import RiskGroupPage from '../pages/risk-group.f7.html';
+import RiskGroupQuizPage from '../pages/risk-group-quiz.f7.html';
+import RiskGroupDescriptionPage from '../pages/risk-group-description.f7.html';
 import StatsPage from '../pages/stats.f7.html';
 import SymptomsPage from '../pages/symptoms.f7.html';
 import WhereHelpPage from '../pages/where-help.f7.html';
@@ -56,8 +58,8 @@ var routes = [
     },
 
     {
-        path: '/risk-group/:age/:symptoms',
-        component: RiskGroupPage,
+        path: '/risk-group-quiz/:age/:symptoms',
+        component: RiskGroupQuizPage,
         options: {
             context: {
                 age: '{{age}}',
@@ -70,6 +72,21 @@ var routes = [
                 console.log(page.route.params.age);
             }
         }
+    },
+
+    {
+        path: '/risk-group/',
+        component: RiskGroupPage,
+    },
+
+    {
+        path: '/risk-group-description/:age/',
+        component: RiskGroupDescriptionPage,
+        options: {
+            context: {
+                age: '{{age}}',
+            }
+        },
     },
 
     {
