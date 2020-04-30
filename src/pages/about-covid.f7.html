@@ -62,42 +62,37 @@
                     A transmissão acontece de uma pessoa doente para outra por contato próximo
                     por meio de:
                   </div>
-                  <div class="row">
-
-                    <div class="col-50">
-                      <div class="transmissor margin-bottom">
-                        <img src="static/images/handshake.svg" alt="handshake" height="60">
-                        <p class="transmissor__name">
-                          <small> 1. Aperto de mão </small>
-                        </p>
-                      </div>
-                      <div class="transmissor">
-                        <img src="static/images/cough.svg" alt="cough" height="60">
-                        <p class="transmissor__name">
-                          <small> 3. Tosse </small>
-                        </p>
+                  <div class="transmitters">
+                    <div class="transmissor">
+                      <img src="static/images/handshake.svg" alt="handshake" height="60">
+                      <div class="transmissor__name padding-vertical">
+                        <small> 1. Aperto de mão </small>
                       </div>
                     </div>
-                    <div class="col-50">
-                      <div class="transmissor margin-bottom">
-                        <img src="static/images/sneeze.svg" alt="sneeze" height="60">
-                        <p class="transmissor__name">
-                          <small> 2. Espirro </small>
-                        </p>
-                      </div>
-                      <div class="transmissor">
-                        <img src="static/images/contamined.svg" alt="contamined" height="60">
-                        <p class="transmissor__name transmissor__name--fs margin-top-half">
-                          <small> 4. Objetos ou superfícies contaminadas </small>
-                          <a href="#" class="tooltip-init tooltip-info" data-tooltip="Celulares, mesas, maçanetas, teclados de computador, etc">
-                            <i class="icon material-icons color-black info--fs">info</i>
-                          </a>
-                        </p>
+                    <div class="transmissor">
+                      <img src="static/images/cough.svg" alt="cough" height="60">
+                      <div class="transmissor__name padding-vertical">
+                        <small> 3. Tosse </small>
                       </div>
                     </div>
-                  </div>
+                    <div class="transmissor">
+                      <img src="static/images/sneeze.svg" alt="sneeze" height="60">
+                      <div class="transmissor__name padding-vertical">
+                        <small> 2. Espirro </small>
+                      </div>
+                    </div>
+                    <div class="transmissor">
+                      <img src="static/images/contamined.svg" alt="contamined" height="60">
+                      <div class="transmissor__name padding-vertical transmissor__name--fs">
+                        <small> 4. Objetos ou superfícies contaminadas </small>
+                        <a href="#" class="tooltip-init tooltip-info" data-tooltip="Celulares, mesas, maçanetas, teclados de computador, etc">
+                          <i class="icon material-icons color-black info--fs">info</i>
+                        </a>
+                      </div>
+                    </div>
                 </div>
               </div>
+            </div>
             </li>
             <li>
               <div class="item-content">
@@ -178,16 +173,24 @@
     max-height: initial;
   }
 
+  .transmitters {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, calc(50% - 5px));
+    gap: 10px;
+  }
+
   .transmissor {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px 2px 0 2px;
     background-color: #f6f6f6;
-    padding-top: 10px;
-    height: 20vh;
+    text-align: center;
   }
 
   .transmissor__name {
     line-height: 12px;
-    padding-bottom: 3px;
+    font-weight: 300;
   }
 
   .transmissor__name--fs, .info--fs {
