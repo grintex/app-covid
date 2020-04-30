@@ -361,11 +361,67 @@
                         this.risks.push(item.value);
                     });
 
-                this.$router.navigate("/diagnosis/" +
-                    this.$route.params.age + "/" +
-                    this.$route.params.symptoms + "/" +
-                    this.risks);
+                this.getDiagnosis();
             },
+
+            getDiagnosis: function() {
+                let age = this.$route.params.age;
+                let symptoms = this.$route.params.symptoms;
+                let risks = this.risks;
+                let diagnosis = "asd";
+
+                const SHORTNESS_BREATH = symptoms.includes("s3");
+
+                const FLU = symptoms.includes("s1") &&
+                                (symptoms.includes("s2") ||
+                                    symptoms.includes("s8") ||
+                                    symptoms.includes("s11") ||
+                                    SHORTNESS_BREATH);
+
+                const OTHER_SYMPTOMS = symptoms.includes("s4") ||
+                                       symptoms.includes("s5") ||
+                                       symptoms.includes("s6") ||
+                                       symptoms.includes("s7") ||
+                                       symptoms.includes("s9") ||
+                                       symptoms.includes("s10") ||
+                                       symptoms.includes("s11") ||
+                                       symptoms.includes("s12");
+
+               // No symptoms
+               if (symptoms.includes("s13")) {
+                   diagnosis = "blue";
+               }
+
+                if (age == "adult") {
+                    const ANY_RISK = risks.length > 0 && !risks.includes("r13");
+
+                    if (((!FLU || !SHORTNESS_BREATH) && OTHER_SYMPTOMS) ||
+                                (FLU && !ANY_RISK)) {
+                        diagnosis = "gray";
+                    }
+
+                    if (FLU && ANY_RISK) {
+                        diagnosis = "yellow";
+                    }
+
+                } else if (age == "child") {
+                    const ANY_RISK = risks.length > 0 && !risks.includes("r10");
+
+                    if (OTHER_SYMPTOMS) {
+                        diagnosis = "gray";
+                    }
+
+                    if (FLU) {
+                        diagnosis = "yellow";
+                    }
+                }
+
+                if (SHORTNESS_BREATH) {
+                    diagnosis = "red";
+                }
+
+                this.$router.navigate("/diagnosis/" + diagnosis);
+            }
         },
     };
 </script>
