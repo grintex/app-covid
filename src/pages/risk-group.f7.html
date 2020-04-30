@@ -26,7 +26,7 @@
                                 <input type="checkbox" name="q1" value="r1" />
                                 <i class="icon icon-checkbox"></i>
                                 <div class="item-inner">
-                                    <div class="item-title">
+                                    <div class="item-text quiz__text">
                                         Tem mais de 60 anos
                                     </div>
                                 </div>
@@ -39,7 +39,7 @@
                                 <input type="checkbox" name="q2" value="r2" />
                                 <i class="icon icon-checkbox"></i>
                                 <div class="item-inner">
-                                    <div class="item-title">
+                                    <div class="item-text quiz__text">
                                         Está grávida
                                     </div>
                                 </div>
@@ -52,7 +52,7 @@
                                 <input type="checkbox" name="q3" value="r3" />
                                 <i class="icon icon-checkbox"></i>
                                 <div class="item-inner">
-                                    <div class="item-title">
+                                    <div class="item-text quiz__text">
                                         Diabetes
                                     </div>
                                 </div>
@@ -65,7 +65,7 @@
                                 <input type="checkbox" name="q4" value="r4" />
                                 <i class="icon icon-checkbox"></i>
                                 <div class="item-inner">
-                                    <div class="item-title">
+                                    <div class="item-text quiz__text">
                                         Doença do pulmão
                                     </div>
                                 </div>
@@ -78,7 +78,7 @@
                                 <input type="checkbox" name="q5" value="r5" />
                                 <i class="icon icon-checkbox"></i>
                                 <div class="item-inner">
-                                    <div class="item-title">
+                                    <div class="item-text quiz__text">
                                         Doença do coração
                                     </div>
                                 </div>
@@ -91,7 +91,7 @@
                                 <input type="checkbox" name="q6" value="r6" />
                                 <i class="icon icon-checkbox"></i>
                                 <div class="item-inner">
-                                    <div class="item-title">
+                                    <div class="item-text quiz__text">
                                         Doença do rim
                                     </div>
                                 </div>
@@ -104,7 +104,7 @@
                                 <input type="checkbox" name="q7" value="r7" />
                                 <i class="icon icon-checkbox"></i>
                                 <div class="item-inner">
-                                    <div class="item-title">
+                                    <div class="item-text quiz__text">
                                         Transplante
                                     </div>
                                 </div>
@@ -117,7 +117,7 @@
                                 <input type="checkbox" name="q8" value="r8" />
                                 <i class="icon icon-checkbox"></i>
                                 <div class="item-inner">
-                                    <div class="item-title">
+                                    <div class="item-text quiz__text">
                                         Usa medicação para reumatismo (corticoide/imunossupressor)
                                     </div>
                                 </div>
@@ -130,7 +130,7 @@
                                 <input type="checkbox" name="q9" value="r9" />
                                 <i class="icon icon-checkbox"></i>
                                 <div class="item-inner">
-                                    <div class="item-title">
+                                    <div class="item-text quiz__text">
                                         HIV/AIDS
                                     </div>
                                 </div>
@@ -143,7 +143,7 @@
                                 <input type="checkbox" name="q10" value="r10" />
                                 <i class="icon icon-checkbox"></i>
                                 <div class="item-inner">
-                                    <div class="item-title">
+                                    <div class="item-text quiz__text">
                                         Câncer
                                     </div>
                                 </div>
@@ -156,7 +156,7 @@
                                 <input type="checkbox" name="q11" value="r11" />
                                 <i class="icon icon-checkbox"></i>
                                 <div class="item-inner">
-                                    <div class="item-title">
+                                    <div class="item-text quiz__text">
                                         Quimioterapia
                                     </div>
                                 </div>
@@ -169,7 +169,7 @@
                                 <input type="checkbox" name="q12" value="r12" />
                                 <i class="icon icon-checkbox"></i>
                                 <div class="item-inner">
-                                    <div class="item-title">
+                                    <div class="item-text quiz__text">
                                         Cirurgia de grande porte nos últimos 30 dias
                                     </div>
                                 </div>
@@ -182,35 +182,167 @@
                                 <input type="checkbox" name="q13" value="r13" />
                                 <i class="icon icon-checkbox"></i>
                                 <div class="item-inner">
-                                    <div class="item-title">
+                                    <div class="item-text quiz__text">
                                         Não me encaixo nessas condições
                                     </div>
                                 </div>
                             </label>
                         </li>
                     </ul>
-
-                    <div
-                        class=" block
-                            display-flex
-                            flex-direction-column
-                            justify-content-center
-                            align-content-space-around"
-                    >
-                        <a
-                            class="button
-                                button-fill
-                                button-large
-                                margin-top"
-                            @click="handleClick"
-                        >
-                            Continuar
-                        </a>
-                    </div>
                 </div>
-                {{else}}
+            {{else}}
+                <div class="list no-hairlines" id="riskQuiz">
+                    <ul>
+                        <!--  -->
+                        <li>
+                            <label class="item-checkbox item-content">
+                                <input type="checkbox" name="q1" value="r1" />
+                                <i class="icon icon-checkbox"></i>
+                                <div class="item-inner">
+                                    <div class="item-text quiz__text">
+                                        Menor de 2 anos
+                                    </div>
+                                </div>
+                            </label>
+                        </li>
 
+                        <!--  -->
+                        <li>
+                            <label class="item-checkbox item-content">
+                                <input type="checkbox" name="q2" value="r2" />
+                                <i class="icon icon-checkbox"></i>
+                                <div class="item-inner">
+                                    <div class="item-text quiz__text">
+                                        Prematuro
+                                    </div>
+                                </div>
+                            </label>
+                        </li>
+
+                        <!--  -->
+                        <li>
+                            <label class="item-checkbox item-content">
+                                <input type="checkbox" name="q3" value="r3" />
+                                <i class="icon icon-checkbox"></i>
+                                <div class="item-inner">
+                                    <div class="item-text quiz__text">
+                                        Nasceu com baixo peso
+                                    </div>
+                                </div>
+                            </label>
+                        </li>
+
+                        <!--  -->
+                        <li>
+                            <label class="item-checkbox item-content">
+                                <input type="checkbox" name="q4" value="r4" />
+                                <i class="icon icon-checkbox"></i>
+                                <div class="item-inner">
+                                    <div class="item-text quiz__text">
+                                        Desnutrido
+                                    </div>
+                                </div>
+                            </label>
+                        </li>
+
+                        <!--  -->
+                        <li>
+                            <label class="item-checkbox item-content">
+                                <input type="checkbox" name="q5" value="r5" />
+                                <i class="icon icon-checkbox"></i>
+                                <div class="item-inner">
+                                    <div class="item-text quiz__text">
+                                        Diabetes
+                                    </div>
+                                </div>
+                            </label>
+                        </li>
+
+                        <!--  -->
+                        <li>
+                            <label class="item-checkbox item-content">
+                                <input type="checkbox" name="q6" value="r6" />
+                                <i class="icon icon-checkbox"></i>
+                                <div class="item-inner">
+                                    <div class="item-text quiz__text">
+                                        Doença do coração
+                                    </div>
+                                </div>
+                            </label>
+                        </li>
+
+                        <!--  -->
+                        <li>
+                            <label class="item-checkbox item-content">
+                                <input type="checkbox" name="q7" value="r7" />
+                                <i class="icon icon-checkbox"></i>
+                                <div class="item-inner">
+                                    <div class="item-text quiz__text">
+                                        Doença do pulmão
+                                    </div>
+                                </div>
+                            </label>
+                        </li>
+
+                        <!--  -->
+                        <li>
+                            <label class="item-checkbox item-content">
+                                <input type="checkbox" name="q8" value="r8" />
+                                <i class="icon icon-checkbox"></i>
+                                <div class="item-inner">
+                                    <div class="item-text quiz__text">
+                                        Doença neurológica
+                                    </div>
+                                </div>
+                            </label>
+                        </li>
+
+                        <!--  -->
+                        <li>
+                            <label class="item-checkbox item-content">
+                                <input type="checkbox" name="q9" value="r9" />
+                                <i class="icon icon-checkbox"></i>
+                                <div class="item-inner">
+                                    <div class="item-text quiz__text">
+                                        Câncer
+                                    </div>
+                                </div>
+                            </label>
+                        </li>
+
+                        <!--  -->
+                        <li>
+                            <label class="item-checkbox item-content">
+                                <input type="checkbox" name="q13" value="r10" />
+                                <i class="icon icon-checkbox"></i>
+                                <div class="item-inner">
+                                    <div class="item-text quiz__text">
+                                        Não me encaixo nessas condições
+                                    </div>
+                                </div>
+                            </label>
+                        </li>
+                    </ul>
+                </div>
             {{/js_if}}
+
+            <div
+                class=" block
+                    display-flex
+                    flex-direction-column
+                    justify-content-center
+                    align-content-space-around"
+            >
+                <a
+                    class="button
+                        button-fill
+                        button-large
+                        margin-top"
+                    @click="handleClick"
+                >
+                    Continuar
+                </a>
+            </div>
         </div>
     </div>
 </template>
@@ -237,3 +369,11 @@
         },
     };
 </script>
+
+<style>
+    .quiz__text {
+        text-transform: uppercase;
+        color: #1e2f42;
+        font-weight: bold;
+    }
+</style>

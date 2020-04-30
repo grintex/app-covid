@@ -6,19 +6,17 @@
       <div class="left">
         <a href="#" class="link back">
           <i class="icon icon-back"></i>
-          <span class="if-not-md">Back</span>
+          <span class="if-not-md">Voltar</span>
         </a>
       </div>
       <div class="title">Como fazer sua máscara</div>
     </div>
   </div>
   <div class="page-content">
-    <div class="block-title">Como fazer sua máscara</div>
-    <div class="block block-strong">
-      <p>Fugiat perspiciatis excepturi, soluta quod non ullam deleniti. Nobis sint nemo consequuntur, fugiat. Eius perferendis animi autem incidunt vel quod tenetur nostrum, voluptate omnis quasi quidem illum consequuntur, a, quisquam.</p>
-    </div>
     <div class="block">
-      <p>Blanditiis, cumque quo adipisci. Molestiae, dolores dolorum quos doloremque ipsa ullam eligendi commodi deserunt doloribus inventore magni? Ea mollitia veniam nostrum nihil, iusto doloribus a at! Ea molestiae ullam delectus!</p>
+      <div class="reponsive reponsive--16x9">
+        <iframe class="reponsive__item" src="https://www.youtube.com/embed/VNYEgEWrJKw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
     </div>
   </div>
 </div>
@@ -26,3 +24,21 @@
 <script>
 export default {};
 </script>
+
+<style>
+.reponsive {
+  position: relative;
+}
+
+.reponsive--16x9 {
+  padding-top: 56.25% /* 9/16 */; 
+}
+
+.reponsive__item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+</style>
