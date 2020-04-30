@@ -73,13 +73,11 @@ var routes = [
     },
 
     {
-        path: '/diagnosis/:age/:symptoms/:risks',
+        path: '/diagnosis/:diagnosis',
         component: DiagnosisPage,
         options: {
             context: {
-                age: '{{age}}',
-                symptoms: '{{symptoms}}',
-                risks: '{{risks}}',
+                diagnosis: '{{diagnosis}}'
             }
         }
     },
