@@ -1,0 +1,313 @@
+<template>
+    <div class="page" data-name="sysmptoms">
+        <div class="navbar">
+            <div class="navbar-bg"></div>
+            <div class="navbar-inner sliding">
+                <div class="left">
+                    <a href="#" class="link back">
+                        <i class="icon icon-back"></i>
+                        <span class="if-not-md">Voltar</span>
+                    </a>
+                </div>
+                <div class="title">Grupos de Risco</div>
+            </div>
+        </div>
+        <div class="page-content">
+            <div class="risk-list list media-list">
+                <ul>
+                    {{#js_if "this.$route.params.age == 'adult'"}}
+                    <li>
+                        <div class="item-content">
+                            <div class="item-media">
+                                <img src="static/images/grandparents.svg" height="60">
+                            </div>
+                            <div class="item-inner">
+                                <div class="item-title block-title">
+                                    Idosos (mais de 60 anos)
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="item-content">
+                            <div class="item-media">
+                                <img src="static/images/woman.svg" height="60">
+                            </div>
+                            <div class="item-inner">
+                                <div class="item-title block-title">
+                                    Gestantes
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="item-content">
+                            <div class="item-media">
+                                <img src="static/images/heart-problem.svg" height="60">
+                            </div>
+                            <div class="item-inner">
+                                <div class="item-title block-title">
+                                    Portadores de doenças cardíacas
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="item-content">
+                            <div class="item-media">
+                                <img src="static/images/lungs.svg" height="60">
+                            </div>
+                            <div class="item-inner">
+                                <div class="item-title block-title">
+                                    Portadores de doenças respiratórias crônicas
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="item-content">
+                            <div class="item-media">
+                                <img src="static/images/kidney.svg" height="60">
+                            </div>
+                            <div class="item-inner">
+                                <div class="item-title block-title">
+                                    Portadores de doenças renais crônicas
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="item-content">
+                            <div class="item-media">
+                                <img src="static/images/blood-pressure.svg" height="60">
+                            </div>
+                            <div class="item-inner">
+                                <div class="item-title block-title">
+                                    Hipertensos
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="item-content">
+                            <div class="item-media">
+                                <img src="static/images/diabetes-test.svg" height="60">
+                            </div>
+                            <div class="item-inner">
+                                <div class="item-title block-title">
+                                    Diabéticos
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="item-content">
+                            <div class="item-media">
+                                <img src="static/images/transplantation.svg" height="60">
+                            </div>
+                            <div class="item-inner">
+                                <div class="item-title block-title">
+                                    Transplantados
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="item-content">
+                            <div class="item-media">
+                                <img src="static/images/medicine.svg" height="60">
+                            </div>
+                            <div class="item-inner">
+                                <div class="item-title block-title">
+                                    Utilização de corticoide/imunossupressor
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="item-content">
+                            <div class="item-media">
+                                <img src="static/images/aid.svg" height="60">
+                            </div>
+                            <div class="item-inner">
+                                <div class="item-title block-title">
+                                    Portadores de HIV/AIDS
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="item-content">
+                            <div class="item-media">
+                                <img src="static/images/patient.svg" height="60">
+                            </div>
+                            <div class="item-inner">
+                                <div class="item-title block-title">
+                                    Pessoas com câncer
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="item-content">
+                            <div class="item-media">
+                                <img src="static/images/patient-2.svg" height="60">
+                            </div>
+                            <div class="item-inner">
+                                <div class="item-title block-title">
+                                    Pessoas em tratamento com quimioterapia
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="item-content">
+                            <div class="item-media">
+                                <img src="static/images/surgery.svg" height="60">
+                            </div>
+                            <div class="item-inner">
+                                <div class="item-title block-title">
+                                    Cirurgia de grande porte nos últimos 30 dias
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    {{else}}
+                    <li>
+                        <div class="item-content">
+                            <div class="item-media">
+                                <img src="static/images/baby-boy.svg" height="60">
+                            </div>
+                            <div class="item-inner">
+                                <div class="item-title block-title">
+                                    Menores de 2 anos
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="item-content">
+                            <div class="item-media">
+                                <img src="static/images/baby.svg" height="60">
+                            </div>
+                            <div class="item-inner">
+                                <div class="item-title block-title">
+                                    Prematuros (nascidos com idade gestacional < 37 semanas)
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="item-content">
+                            <div class="item-media">
+                                <img src="static/images/baby-2.svg" height="60">
+                            </div>
+                            <div class="item-inner">
+                                <div class="item-title block-title">
+                                    Crianças que nasceram com baixo peso
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="item-content">
+                            <div class="item-media">
+                                <img src="static/images/lose-weight.svg" height="60">
+                            </div>
+                            <div class="item-inner">
+                                <div class="item-title block-title">
+                                    Desnutridos
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="item-content">
+                            <div class="item-media">
+                                <img src="static/images/diabetes-test-2.svg" height="60">
+                            </div>
+                            <div class="item-inner">
+                                <div class="item-title block-title">
+                                    Diabéticos
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="item-content">
+                            <div class="item-media">
+                                <img src="static/images/heart-problem-2.svg" height="60">
+                            </div>
+                            <div class="item-inner">
+                                <div class="item-title block-title">
+                                    Portadores de doenças cardíacas
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="item-content">
+                            <div class="item-media">
+                                <img src="static/images/lungs.svg" height="60">
+                            </div>
+                            <div class="item-inner">
+                                <div class="item-title block-title">
+                                    Portadores de doenças respiratórias crônicas
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="item-content">
+                            <div class="item-media">
+                                <img src="static/images/brainstorm.svg" height="60">
+                            </div>
+                            <div class="item-inner">
+                                <div class="item-title block-title">
+                                    Portadores de doenças neurológicas
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="item-content">
+                            <div class="item-media">
+                                <img src="static/images/patient.svg" height="60">
+                            </div>
+                            <div class="item-inner">
+                                <div class="item-title block-title">
+                                    Crianças com câncer
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    {{/js_if}}
+                </ul>
+            </div>
+        </div>
+    </div>
+</template>
+
+<script>
+    export default {};
+</script>

@@ -13,14 +13,138 @@
             </div>
         </div>
         <div class="page-content">
-            {{$route.params.age}}
-            {{$route.params.symptoms}}
-            {{$route.params.risks}}
+
+            <div class="padding">
+                <div class="card diagnosis--{{$route.params.diagnosis}}
+                            display-flex
+                            flex-direction-column
+                            justify-content-center
+                            align-itens-center
+                            align-content-space-around"
+                >
+                    <div class="card-content card-content-padding">
+
+                        <div class="display-flex
+                                    flex-direction-column
+                                    align-items-center
+                                    padding"
+                        >
+                            <img class="card__icon" id="diagnosisIcon" src="">
+                        </div>
+
+                        <div class="card__text" id="diagnosisMessage"></div>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </div>
 </template>
 <script>
     export default {
+        data: function() {
+            return {
 
+            }
+        },
+
+        on: {
+            pageInit: function() {
+                let msgElem = document.getElementById("diagnosisMessage");
+                let iconElem = document.getElementById("diagnosisIcon");
+
+                switch(this.$route.params.diagnosis) {
+                    case "blue":
+                        msgElem.innerHTML = "Com base em suas respostas, a \
+                            orientação é que você mantenha as condutas de \
+                            precaução e prevenção, mantendo-se em distanciamento \
+                            social. Em caso de dúvidas sobre COVID-19 entre em \
+                            contato com a central de teleatendimento de dúvidas \
+                            gerais pelo número " + this. addPhoneLink("3321-0027") + "\
+                             de Chapecó.";
+
+                        iconElem.src = "/static/images/quarantine.svg";
+
+                        break;
+
+                    case "gray":
+                        msgElem.innerHTML = "Com base em suas respostas, a \
+                            orientação é que você mantenha as condutas de \
+                            precaução e prevenção, mantendo-se em isolamento \
+                            social. Recomendamos que monitore seus sintomas e \
+                            em caso de persistência ou piora entre em contato \
+                            com a central de teleatendimento pelo número \
+                            " + this.addPhoneLink("2049-6500") + " de Chapecó \
+                            ou procure atendimento médico presencial. Em caso \
+                            de dúvidas sobre COVID-19 ligue para a central de \
+                            teleatendimento de dúvidas gerais " +
+                            this.addPhoneLink("3321-0027") + "de Chapecó.";
+
+                        iconElem.src = "/static/images/quarantine.svg";
+
+                        break;
+
+                    case "yellow":
+                        msgElem.innerHTML = "Com base em suas respostas, a \
+                            orientação é que você entre em contato com o \
+                            teleatendimento pelo número " +
+                            this.addPhoneLink("2049-6500") + " de Chapecó.";
+
+                        iconElem.src = "/static/images/call.svg";
+
+                        break;
+
+                    case "red":
+                        msgElem.innerHTML = "Com base em suas respostas, a \
+                            orientação é que você procure atendimento presencial \
+                            imediato. <a class='link' href='/where-help/'> \
+                            Clique aqui</a> para encontrar o local de \
+                            atendimento mais próximo de você.";
+
+                        iconElem.src = "/static/images/ambulance.svg";
+                        break;
+                }
+
+            }
+        },
+
+        methods: {
+            addPhoneLink: function(phone) {
+                return `
+                <a class="link external"
+                    href="tel:${phone.replace('-', '')}"
+                    target="_system"
+                >
+                    ${phone}
+                </a>`
+            }
+        }
     };
 </script>
+
+<style>
+    .diagnosis--blue {
+        background-color: rgb(165, 220, 245);
+    }
+
+    .diagnosis--gray {
+        background-color: rgb(223, 228, 231);
+    }
+
+    .diagnosis--yellow {
+        background-color: rgb(245, 238, 182);
+    }
+
+    .diagnosis--red {
+        background-color: rgb(238, 154, 154);
+    }
+
+    .card__icon {
+        height: 90px;
+    }
+
+    .card__text {
+        font-size: 19px;
+        text-align: justify;
+    }
+</style>
