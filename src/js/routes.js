@@ -12,6 +12,10 @@ import RiskGroupDescriptionPage from '../pages/risk-group-description.f7.html';
 import StatsPage from '../pages/stats.f7.html';
 import SymptomsPage from '../pages/symptoms.f7.html';
 import WhereHelpPage from '../pages/where-help.f7.html';
+import WhenHelpPage from '../pages/when-help.f7.html';
+import PlacesHelpPage from '../pages/places-help.f7.html';
+import OtherPlacesHelpPage from '../pages/other-places-help.f7.html';
+import UsefulPhonesPage from '../pages/useful-phones.f7.html';
 
 import HomePage from '../pages/home.f7.html';
 import AboutPage from '../pages/about.f7.html';
@@ -107,6 +111,26 @@ var routes = [
     {
         path: '/where-help/',
         component: WhereHelpPage
+    },
+
+    {
+        path: '/when-help/',
+        component: WhenHelpPage
+    },
+
+    {
+        path: '/places-help/',
+        component: PlacesHelpPage
+    },
+
+    {
+        path: '/other-places-help/',
+        component: OtherPlacesHelpPage
+    },
+
+    {
+        path: '/useful-phones/',
+        component: UsefulPhonesPage
     },
 
     {
