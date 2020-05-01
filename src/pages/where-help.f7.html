@@ -1,28 +1,143 @@
 <template>
-<div class="page" data-name="infected">
-  <div class="navbar">
-    <div class="navbar-bg"></div>
-    <div class="navbar-inner sliding">
-      <div class="left">
-        <a href="#" class="link back">
-          <i class="icon icon-back"></i>
-          <span class="if-not-md">Back</span>
-        </a>
-      </div>
-      <div class="title">Onde procurar ajuda</div>
+    <div class="page" data-name="infected">
+        <div class="navbar">
+            <div class="navbar-bg"></div>
+            <div class="navbar-inner sliding">
+                <div class="left">
+                    <a href="#" class="link back">
+                        <i class="icon icon-back"></i>
+                        <span class="if-not-md">Back</span>
+                    </a>
+                </div>
+                <div class="title">Onde procurar ajuda</div>
+            </div>
+        </div>
+        <div class="page-content">
+            <div class="row">
+                <div class="col-50">
+                    <a href="/when-help/" class="card about-card
+                                    display-flex
+                                    flex-direction-column
+                                    justify-content-center
+                                    align-itens-center
+                                    align-content-space-around"
+                    >
+                        <div class="card-content card-content-padding">
+
+                            <div class="display-flex
+                                        flex-direction-column
+                                        align-items-center
+                                        padding"
+                            >
+                                <img class="about-card__icon" src="/static/images/question-2.svg">
+                            </div>
+
+                            <div class="about-card__text">
+                                Quando procurar atendimento?
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-50">
+                    <a href="/places-help/" class="card about-card
+                                    display-flex
+                                    flex-direction-column
+                                    justify-content-center
+                                    align-itens-center
+                                    align-content-space-around"
+                    >
+                        <div class="card-content card-content-padding">
+
+                            <div class="display-flex
+                                        flex-direction-column
+                                        align-items-center
+                                        padding"
+                            >
+                                <img class="about-card__icon" src="/static/images/map.svg">
+                            </div>
+
+                            <div class="about-card__text">
+                                Onde procurar atendimento?
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-50">
+                    <a href="/other-places-help/" class="card about-card
+                                    display-flex
+                                    flex-direction-column
+                                    justify-content-center
+                                    align-itens-center
+                                    align-content-space-around"
+                    >
+                        <div class="card-content card-content-padding">
+
+                            <div class="display-flex
+                                        flex-direction-column
+                                        align-items-center
+                                        padding"
+                            >
+                                <img class="about-card__icon" src="/static/images/hospital.svg">
+                            </div>
+
+                            <div class="about-card__text">
+                                Outros locais de atendimento em Chapecó
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-50">
+                    <a href="/useful-phones/" class="card about-card
+                                    display-flex
+                                    flex-direction-column
+                                    justify-content-center
+                                    align-itens-center
+                                    align-content-space-around"
+                    >
+                        <div class="card-content card-content-padding">
+
+                            <div class="display-flex
+                                        flex-direction-column
+                                        align-items-center
+                                        padding"
+                            >
+                                <img class="about-card__icon" src="/static/images/call.svg">
+                            </div>
+
+                            <div class="about-card__text">
+                                Telefones úteis
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+        </div>
     </div>
-  </div>
-  <div class="page-content">
-    <div class="block-title">Onde procurar ajuda</div>
-    <div class="block block-strong">
-      <p>Fugiat perspiciatis excepturi, soluta quod non ullam deleniti. Nobis sint nemo consequuntur, fugiat. Eius perferendis animi autem incidunt vel quod tenetur nostrum, voluptate omnis quasi quidem illum consequuntur, a, quisquam.</p>
-    </div>
-    <div class="block">
-      <p>Blanditiis, cumque quo adipisci. Molestiae, dolores dolorum quos doloremque ipsa ullam eligendi commodi deserunt doloribus inventore magni? Ea mollitia veniam nostrum nihil, iusto doloribus a at! Ea molestiae ullam delectus!</p>
-    </div>
-  </div>
-</div>
 </template>
 <script>
-export default {};
+    export default {};
 </script>
+
+<style>
+    .about-card {
+        background-color: #f6f6f6;
+        height: 30vh;
+    }
+
+    .about-card__text {
+        text-transform: uppercase;
+        color: #1e2f42;
+        text-align: center;
+    }
+
+    .about-card__icon {
+        height: 55px;
+    }
+</style>
