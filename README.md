@@ -1,10 +1,13 @@
 <p align="center">
-    <img width="400" height="200" src=".github/logo.png" title="Logo do projeto"><br />
-    <img src="https://img.shields.io/maintenance/yes/2020?style=for-the-badge" title="Status do projeto">
-    <img src="https://img.shields.io/github/workflow/status/grintex/app-covid/Main?label=Build&logo=github&logoColor=white&style=for-the-badge" title="Status do build">
+    <img width="600" src=".github/logo.png" title="Logo do projeto"><br />
 </p>
 
 # Coronavírus Chapecó
+
+<p align="left">
+    <img src="https://img.shields.io/maintenance/yes/2020?style=for-the-badge" title="Status do projeto">
+    <img src="https://img.shields.io/github/workflow/status/grintex/app-covid/Main?label=Build&logo=github&logoColor=white&style=for-the-badge" title="Status do build">
+</p>
 
 Esse repositório contém o código-fonte do aplicativo móvel *Coronavírus Chapecó*, desenvolvido no contexto do [Edital Nº 259/GR/UFFS/2020](https://www.uffs.edu.br/atos-normativos/edital/gr/2020-0259) da [Universidade Federal da Fronteira Sul](https://www.uffs.edu.br), campus Chapecó/SC. O projeto de extensão envolve os cursos de Medicina e Ciência da Computação da UFFS campus Chapecó, sob coordenação da profa. Thais Nascimento Helou (Medicina).
 
@@ -24,9 +27,12 @@ A proposta busca a orientação e informação da população sobre medidas de p
 
 * Brenda Thomas (Medicina, UFFS Chapecó/SC)
 * Rafael Fagundes (Medicina, UFFS Chapecó/SC)
-* Jean Carlo Hilger (Ciência da Computação, UFFS Chapecó/SC)
-* Junior Vitor Ramisch (Ciência da Computação, UFFS Chapecó/SC)
-* Mateus Koppe (Ciência da Computação, UFFS Chapecó/SC)
+* [Jean Carlo Hilger](https://github.com/JeanCHilger) (Ciência da Computação, UFFS Chapecó/SC)
+* [Junior Vitor Ramisch](https://github.com/arufonsekun) (Ciência da Computação, UFFS Chapecó/SC)
+* [Mateus Koppe](https://github.com/mateusKoppe) (Ciência da Computação, UFFS Chapecó/SC)
+
+**Suporte:**
+* [Grupo de Inovação Tecnológica Experimental - Grintex](https://grintex.uffs.cc) (UFFS Chapecó/SC)
 
 ## Informações para desenvolvedores
 
@@ -112,3 +118,9 @@ Abaixo está uma lista de links interessantes e projetos similares:
 * [UFFS](https://www.uffs.edu.br)
 * [Aplicativo Coronavirus - SUS](https://www.gov.br/pt-br/apps/coronavirus-sus)
 * [Github Coronavirus - SUS](https://github.com/spbgovbr/aplicativo-coronavirus-sus)
+
+## Créditos de ícones e arte
+
+Os ícones e o logo utilizados nesse aplicativo foram feitos por diversos artistas de [www.flaticon.com](https://www.flaticon.com).
+Icons made by [Freepik](https://www.flaticon.com/authors/Freepik), [Eucalyp](https://www.flaticon.com/authors/Eucalyp), [Smashicons](https://www.flaticon.com/authors/Smashicons), [Surang](https://www.flaticon.com/authors/Surang), [Monkik](https://www.flaticon.com/authors/Monkik), [Iconixar](https://www.flaticon.com/authors/Iconixar), [Photo3idea-studio](https://www.flaticon.com/authors/Photo3idea-studio), [Ultimatearm](https://www.flaticon.com/authors/Ultimatearm), [PongsakornRed](https://www.flaticon.com/authors/PongsakornRed), [Nhor Phai](https://www.flaticon.com/authors/Nhor-Phai), [Payungkead](https://www.flaticon.com/authors/Payungkead), [Mynamepong](https://www.flaticon.com/authors/Mynamepong), [Good Ware](https://www.flaticon.com/authors/Good-Ware), [Xnimrodx](https://www.flaticon.com/authors/Xnimrodx), [Srip](https://www.flaticon.com/authors/Srip) from [www.flaticon.com](https://www.flaticon.com).
+
