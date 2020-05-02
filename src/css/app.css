@@ -65,6 +65,21 @@ div.block-title i.f7-icons {
     margin-right: 0.2em;
 }
 
-.stat-number strong {
-    font-size: 8em;
+div.stat div.card-content strong {
+    font-size: 3em;
 }
+
+div.stat div.card-footer {
+    font-size: 0.9em;
+}
+
+.stat-footnote {
+    line-height: 0.8em;
+    opacity: 0.7;
+}
+
+.stat-footnote i {
+    font-size: 1.3em;
+    opacity: 0.6;
+}
+
