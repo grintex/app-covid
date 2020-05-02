@@ -1,44 +1,46 @@
 <template>
-<div class="page" data-name="infected">
-  <div class="navbar">
-    <div class="navbar-bg"></div>
-    <div class="navbar-inner sliding">
-      <div class="left">
-        <a href="#" class="link back">
-          <i class="icon icon-back"></i>
-          <span class="if-not-md">Voltar</span>
-        </a>
-      </div>
-      <div class="title">Como fazer sua máscara</div>
+    <div class="page" data-name="infected">
+        <div class="navbar">
+            <div class="navbar-bg"></div>
+            <div class="navbar-inner sliding">
+                <div class="left">
+                    <a href="#" class="link back">
+                        <i class="icon icon-back"></i>
+                        <span class="if-not-md">Voltar</span>
+                    </a>
+                </div>
+                <div class="title">Como fazer sua máscara</div>
+            </div>
+        </div>
+        <div class="page-content">
+            <div class="block">
+                <div class="reponsive reponsive--16x9">
+                    <iframe class="reponsive__item" src="https://www.youtube.com/embed/VNYEgEWrJKw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-  <div class="page-content">
-    <div class="block">
-      <div class="reponsive reponsive--16x9">
-        <iframe class="reponsive__item" src="https://www.youtube.com/embed/VNYEgEWrJKw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-    </div>
-  </div>
-</div>
 </template>
 <script>
-export default {};
+    export default {};
 </script>
 
 <style>
-.reponsive {
-  position: relative;
-}
+    .reponsive {
+        position: relative;
+    }
 
-.reponsive--16x9 {
-  padding-top: 56.25% /* 9/16 */; 
-}
+    .reponsive--16x9 {
+        padding-top: 56.25%
+            /* 9/16 */
+        ;
+    }
 
-.reponsive__item {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-}
+    .reponsive__item {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+    }
 </style>
