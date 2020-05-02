@@ -1,145 +1,114 @@
 <template>
-  <div class="page" data-name="home">
-    <!-- Top Navbar -->
-    <div class="navbar">
-      <div class="navbar-bg"></div>
-      <div class="navbar-inner">
-        <div class="title-large">
-          <div class="title-large-text">Corona Vírus</div>
+    <div class="page" data-name="home">
+        <!-- Top Navbar -->
+        <div class="navbar">
+            <div class="navbar-bg"></div>
+            <div class="navbar-inner">
+                <div class="title-large">
+                    <div class="title-large-text">Corona Vírus</div>
+                </div>
+            </div>
         </div>
-      </div>
+
+        <!-- Scrollable page content-->
+        <div class="page-content">
+            <div class="menu-grid">
+                <a href="/infected/" class="menu-grid__item">
+                    <div class="item-inner">
+                        <img src="static/images/question.svg" class="menu-grid__icon">
+                        <div class="item-title">Estou com COVID-19?</div>
+                    </div>
+                </a>
+
+                <a href="/about-covid/" class="menu-grid__item">
+                    <div class="item-inner">
+                        <img src="static/images/coronavirus.svg" class="menu-grid__icon">
+                        <div class="item-title">Sobre a COVID-19</div>
+                    </div>
+                </a>
+
+                <a href="/symptoms/" class="menu-grid__item">
+                    <div class="item-inner">
+                        <img src="static/images/cough.svg" class="menu-grid__icon">
+                        <div class="item-title">Sintomas</div>
+                    </div>
+                </a>
+
+                <a href="/risk-group/" class="menu-grid__item">
+                    <div class="item-inner">
+                        <img src="static/images/couple.svg" class="menu-grid__icon">
+                        <div class="item-title">Grupo de risco</div>
+                    </div>
+                </a>
+
+                <a href="/prevention/" class="menu-grid__item">
+                    <div class="item-inner">
+                        <img src="static/images/hand-wash.svg" class="menu-grid__icon">
+                        <div class="item-title">Medidas de prevenção</div>
+                    </div>
+                </a>
+
+                <a href="/where-help/" class="menu-grid__item">
+                    <div class="item-inner">
+                        <img src="static/images/hospital-building.svg" class="menu-grid__icon">
+                        <div class="item-title">Onde procurar atendimento</div>
+                    </div>
+                </a>
+
+                <a href="/stats/" class="menu-grid__item">
+                    <div class="item-inner">
+                        <img src="static/images/bar-chart.svg" class="menu-grid__icon">
+                        <div class="item-title">Estatísticas</div>
+                    </div>
+                </a>
+
+                <a href="/news/" class="menu-grid__item">
+                    <div class="item-inner">
+                        <img src="static/images/newspaper.svg" class="menu-grid__icon">
+                        <div class="item-title">Notícias</div>
+                    </div>
+                </a>
+
+                <a href="/mask/" class="menu-grid__item">
+                    <div class="item-inner">
+                        <img src="static/images/medical-mask.svg" class="menu-grid__icon">
+                        <div class="item-title">Como fazer sua máscara</div>
+                    </div>
+                </a>
+
+                <a href="/about/" class="menu-grid__item">
+                    <div class="item-inner">
+                        <img src="static/images/information.svg" class="menu-grid__icon">
+                        <div class="item-title">Sobre o aplicativo</div>
+                    </div>
+                </a>
+            </div>
+        </div>
     </div>
-
-    <!-- Scrollable page content-->
-    <div class="page-content">
-      <div class="menu-grid">
-        <a href="/infected/" class="menu-grid__item">
-          <div class="item-inner">
-            <img
-              src="static/images/question.svg"
-              class="menu-grid__icon"
-            >
-            <div class="item-title">Estou com COVID-19?</div>
-          </div>
-        </a>
-
-        <a href="/about-covid/" class="menu-grid__item">
-          <div class="item-inner">
-            <img
-              src="static/images/coronavirus.svg"
-              class="menu-grid__icon"
-            >
-            <div class="item-title">Sobre a COVID-19</div>
-          </div>
-        </a>
-
-        <a href="/symptoms/" class="menu-grid__item">
-          <div class="item-inner">
-            <img
-              src="static/images/cough.svg"
-              class="menu-grid__icon"
-            >
-            <div class="item-title">Sintomas</div>
-          </div>
-        </a>
-
-        <a href="/risk-group/" class="menu-grid__item">
-          <div class="item-inner">
-            <img
-              src="static/images/couple.svg"
-              class="menu-grid__icon"
-            >
-            <div class="item-title">Grupo de risco</div>
-          </div>
-        </a>
-
-        <a href="/prevention/" class="menu-grid__item">
-          <div class="item-inner">
-            <img
-              src="static/images/hand-wash.svg"
-              class="menu-grid__icon"
-            >
-            <div class="item-title">Medidas de prevenção</div>
-          </div>
-        </a>
-
-        <a href="/where-help/" class="menu-grid__item">
-          <div class="item-inner">
-            <img
-              src="static/images/hospital-building.svg"
-              class="menu-grid__icon"
-            >
-            <div class="item-title">Onde procurar atendimento</div>
-          </div>
-        </a>
-
-        <a href="/stats/" class="menu-grid__item">
-          <div class="item-inner">
-            <img
-              src="static/images/bar-chart.svg"
-              class="menu-grid__icon"
-            >
-            <div class="item-title">Estatísticas</div>
-          </div>
-        </a>
-
-        <a href="/news/" class="menu-grid__item">
-          <div class="item-inner">
-            <img
-              src="static/images/newspaper.svg"
-              class="menu-grid__icon"
-            >
-            <div class="item-title">Notícias</div>
-          </div>
-        </a>
-
-        <a href="/mask/" class="menu-grid__item">
-          <div class="item-inner">
-            <img
-              src="static/images/medical-mask.svg"
-              class="menu-grid__icon"
-            >
-            <div class="item-title">Como fazer sua máscara</div>
-          </div>
-        </a>
-
-        <a href="/about/" class="menu-grid__item">
-          <div class="item-inner">
-            <img
-              src="static/images/information.svg"
-              class="menu-grid__icon"
-            >
-            <div class="item-title">Sobre o aplicativo</div>
-          </div>
-        </a>
-      </div>
-    </div>
-  </div>
 </template>
 
 <script>
-  export default {
-  }
+    export default {}
 </script>
 
 <style>
-  .menu-grid {
-    padding: 10px;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, calc(50% - 5px));
-    grid-gap: 10px;
-  }
+    .menu-grid {
+        padding: 10px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, calc(50% - 5px));
+        grid-gap: 10px;
+    }
 
-  .menu-grid__item {
-    background-color: #f6f6f6;
-    text-align: center;
-    text-transform: uppercase;
-    color: #1e2f42;
-    font-weight: bold;
-    padding: 10px;
-  }
+    .menu-grid__item {
+        background-color: #f6f6f6;
+        text-align: center;
+        text-transform: uppercase;
+        color: #1e2f42;
+        font-weight: bold;
+        padding: 10px;
+    }
 
-  .menu-grid__icon {
-    height: 55px;
-  }
+    .menu-grid__icon {
+        height: 55px;
+    }
 </style>
