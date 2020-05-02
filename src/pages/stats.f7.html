@@ -13,16 +13,89 @@
             </div>
         </div>
         <div class="page-content">
-            <div class="block-title">Estatísticas</div>
-            <div class="block block-strong">
-                <p>Fugiat perspiciatis excepturi, soluta quod non ullam deleniti. Nobis sint nemo consequuntur, fugiat. Eius perferendis animi autem incidunt vel quod tenetur nostrum, voluptate omnis quasi quidem illum consequuntur, a, quisquam.</p>
-            </div>
+            <div class="block-title">Número de casos</div>
+
             <div class="block">
-                <p>Blanditiis, cumque quo adipisci. Molestiae, dolores dolorum quos doloremque ipsa ullam eligendi commodi deserunt doloribus inventore magni? Ea mollitia veniam nostrum nihil, iusto doloribus a at! Ea molestiae ullam delectus!</p>
+                <div class="row">
+                    <div class="col align-content-center">
+                        <div class="card stat">
+                            <div class="card-header align-content-left text-color-white bg-color-red"><i class="f7-icons">person_crop_circle_badge_exclam</i> Confirmados</div>
+                            <div class="card-content card-content-padding text-align-center">
+                                <strong class="text-color-red">{{confirmed}}</strong>
+                            </div>
+                            <div class="card-footer align-content-left">Chapecó/SC</div>
+                        </div>
+                    </div>
+                    <div class="col align-content-center">
+                        <div class="card stat">
+                            <div class="card-header align-content-left text-color-white bg-color-orange"><i class="f7-icons">search_circle</i> Suspeitos</div>
+                            <div class="card-content card-content-padding text-align-center">
+                                <strong class="text-color-orange">{{suspected}}</strong>
+                            </div>
+                            <div class="card-footer align-content-left">Chapecó/SC</div>                        
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="row">
+                    <div class="col align-content-center">
+                        <div class="card stat">
+                            <div class="card-header align-content-left text-color-white bg-color-green"><i class="f7-icons">checkmark_alt_circle</i> Curados</div>
+                            <div class="card-content card-content-padding text-align-center">
+                                <strong class="text-color-green">{{recovered}}</strong>
+                            </div>
+                            <div class="card-footer align-content-left stat">Chapecó/SC</div>
+                        </div>
+                    </div>
+                    <div class="col align-content-center">
+                        <div class="card stat">
+                            <div class="card-header align-content-left text-color-white bg-color-black"><i class="f7-icons">rhombus_fill</i> Óbitos</div>
+                            <div class="card-content card-content-padding text-align-center">
+                                <strong class="text-color-black">{{deaths}}</strong>
+                            </div>
+                            <div class="card-footer align-content-left">Chapecó/SC</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="block">
+                <p class="stat-footnote"><i class="f7-icons">info_circle</i> Fonte: Assessoria de impresa de Chapecó, 2020</p>
+                <p class="stat-footnote"><i class="f7-icons">clock</i> Última atualização: {{ last_updated }}</p>
             </div>
         </div>
     </div>
 </template>
 <script>
-    export default {};
+    export default {
+        // Lifecycle Hooks
+        created() {
+            console.log('componentCreated', this)
+        },
+
+        // Component Data
+        data: function() {
+            // Must return an object
+            return {
+                confirmed: 115,
+                suspected: 116,
+                recovered: 6,
+                deaths: 0,
+                last_updated: '02/05/2020'
+            }
+        },
+        // Component Methods
+        methods: {
+            openAlert: function() {
+                var self = this;
+                self.$app.dialog.alert('Hello World');
+            },
+        },
+        // Page Events
+        on: {
+            pageMounted: function(e, page) {
+                console.log('pageMounted', page);
+            },
+        }
+    }
 </script>
