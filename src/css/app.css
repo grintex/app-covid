@@ -64,3 +64,7 @@ div.block-title i.f7-icons {
     font-size: 1.4em;
     margin-right: 0.2em;
 }
+
+.stat-number strong {
+    font-size: 8em;
+}
