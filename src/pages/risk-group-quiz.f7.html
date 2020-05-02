@@ -366,7 +366,7 @@
 
             getDiagnosis: function() {
                 let age = this.$route.params.age;
-                let symptoms = this.$route.params.symptoms;
+                let symptoms = this.$route.params.symptoms.split(',');
                 let risks = this.risks;
                 let diagnosis = "asd";
 
