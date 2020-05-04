@@ -20,19 +20,39 @@
                     <div class="col align-content-center">
                         <div class="card stat">
                             <div class="card-header align-content-left text-color-white bg-color-red"><i class="f7-icons">person_crop_circle_badge_exclam</i> Confirmados</div>
-                            <div class="card-content card-content-padding text-align-center">
-                                <strong class="text-color-red">{{confirmed}}</strong>
-                            </div>
-                            <div class="card-footer align-content-left">Chapecó/SC</div>
+                            {{#if current}}
+                                <div class="card-content card-content-padding text-align-center">
+                                    <strong class="text-color-red">{{current.confirmed}}</strong>
+                                </div>
+                                <div class="card-footer align-content-left">
+                                    <span>{{current.place_name}}</span>
+                                    <span>{{current.date}}</span>
+                                </div>
+                            {{else}}
+                                <!-- Otherwise show preloader -->
+                                <div class="card-content card-content-padding text-align-center">
+                                    <div class="preloader"></div>
+                                </div>
+                            {{/if}}
                         </div>
                     </div>
                     <div class="col align-content-center">
                         <div class="card stat">
                             <div class="card-header align-content-left text-color-white bg-color-orange"><i class="f7-icons">search_circle</i> Suspeitos</div>
-                            <div class="card-content card-content-padding text-align-center">
-                                <strong class="text-color-orange">{{suspected}}</strong>
-                            </div>
-                            <div class="card-footer align-content-left">Chapecó/SC</div>                        
+                            {{#if current}}
+                                <div class="card-content card-content-padding text-align-center">
+                                    <strong class="text-color-orange">{{current.suspected}}</strong>
+                                </div>
+                                <div class="card-footer align-content-left">
+                                    <span>{{current.place_name}}</span>
+                                    <span>{{current.date}}</span>
+                                </div>
+                            {{else}}
+                                <!-- Otherwise show preloader -->
+                                <div class="card-content card-content-padding text-align-center">
+                                    <div class="preloader"></div>
+                                </div>
+                            {{/if}}
                         </div>
                     </div>
                 </div>
@@ -41,19 +61,39 @@
                     <div class="col align-content-center">
                         <div class="card stat">
                             <div class="card-header align-content-left text-color-white bg-color-green"><i class="f7-icons">checkmark_alt_circle</i> Curados</div>
-                            <div class="card-content card-content-padding text-align-center">
-                                <strong class="text-color-green">{{recovered}}</strong>
-                            </div>
-                            <div class="card-footer align-content-left stat">Chapecó/SC</div>
+                            {{#if current}}
+                                <div class="card-content card-content-padding text-align-center">
+                                    <strong class="text-color-green">{{current.recovered}}</strong>
+                                </div>
+                                <div class="card-footer align-content-left">
+                                    <span>{{current.place_name}}</span>
+                                    <span>{{current.date}}</span>
+                                </div>
+                            {{else}}
+                                <!-- Otherwise show preloader -->
+                                <div class="card-content card-content-padding text-align-center">
+                                    <div class="preloader"></div>
+                                </div>
+                            {{/if}}
                         </div>
                     </div>
                     <div class="col align-content-center">
                         <div class="card stat">
                             <div class="card-header align-content-left text-color-white bg-color-black"><i class="f7-icons">rhombus_fill</i> Óbitos</div>
-                            <div class="card-content card-content-padding text-align-center">
-                                <strong class="text-color-black">{{deaths}}</strong>
-                            </div>
-                            <div class="card-footer align-content-left">Chapecó/SC</div>
+                            {{#if current}}
+                                <div class="card-content card-content-padding text-align-center">
+                                    <strong class="text-color-black">{{current.deaths}}</strong>
+                                </div>
+                                <div class="card-footer align-content-left">
+                                    <span>{{current.place_name_name}}</span>
+                                    <span>{{current.date}}</span>
+                                </div>
+                            {{else}}
+                                <!-- Otherwise show preloader -->
+                                <div class="card-content card-content-padding text-align-center">
+                                    <div class="preloader"></div>
+                                </div>
+                            {{/if}}
                         </div>
                     </div>
                 </div>
@@ -61,40 +101,52 @@
 
             <div class="block">
                 <p class="stat-footnote"><i class="f7-icons">info_circle</i> Fonte: Assessoria de impresa de Chapecó, 2020</p>
-                <p class="stat-footnote"><i class="f7-icons">clock</i> Última atualização: {{ last_updated }}</p>
+                <p class="stat-footnote"><i class="f7-icons">clock</i> Última atualização: {{#if current}} {{ current.date }} {{/if}}</p>
             </div>
         </div>
     </div>
 </template>
 <script>
     export default {
-        // Lifecycle Hooks
-        created() {
-            console.log('componentCreated', this)
-        },
-
         // Component Data
         data: function() {
             // Must return an object
             return {
-                confirmed: 115,
-                suspected: 116,
-                recovered: 6,
-                deaths: 0,
-                last_updated: '02/05/2020'
+                current: null,  // { confirmed: int, suspected: int, recovered: int, deaths: int, place_name: str, date: str }
             }
         },
         // Component Methods
         methods: {
-            openAlert: function() {
+            getLatestStatByPlaceKey: function(placeKey, data) {
+                var latest = null;
+
+                data.map(function(entry) {
+                    if(entry.place_key != placeKey) {
+                        return;
+                    }
+
+                    if(latest == null || latest.date.localeCompare(entry.date) <= 0) {
+                        latest = entry;
+                    }
+                })
+
+                return latest;
+            },
+
+            loadStats: function() {
                 var self = this;
-                self.$app.dialog.alert('Hello World');
+                var app = self.$app;
+
+                app.request.json('http://app-covid.api.uffs.cc/v0/stats', function(data) {
+                    self.$setState({
+                        current: self.getLatestStatByPlaceKey('cco', data),
+                    });
+                });
             },
         },
-        // Page Events
         on: {
-            pageMounted: function(e, page) {
-                console.log('pageMounted', page);
+            pageInit: function(e, page) {
+                this.loadStats();
             },
         }
     }
