@@ -1,8 +1,8 @@
 {
   "name": "cc.uffs.extension.covid",
-  "displayName": "coronavirus-chapeco",
-  "version": "1.0.0",
-  "description": "A sample Apache Cordova application that responds to the deviceready event.",
+  "displayName": "Coronavírus Chapeco",
+  "version": "0.1.0",
+  "description": "Aplicativo para orientação e informação da população sobre medidas de prevenção contra a infecção pelo novo Coronavírus, com foco em Chapecó/SC.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,7 +10,7 @@
   "keywords": [
     "ecosystem:cordova"
   ],
-  "author": "Apache Cordova Team",
+  "author": "Equipe do Projeto Aplicativo Coronavírus (UFFS, Chapecó/SC)",
   "license": "Apache-2.0",
   "dependencies": {
     "cordova-android": "^8.1.0",
