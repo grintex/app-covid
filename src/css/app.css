@@ -88,3 +88,14 @@ div.stat div.card-footer {
     width: 40px;
     margin-left: 0.5em;
 }
+
+.card-header-pic .card-header {
+    height: 40vw;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+}
+
+.card-header-pic .card-content-padding .date {
+    color: #8e8e93;
+}
