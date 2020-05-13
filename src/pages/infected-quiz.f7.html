@@ -244,6 +244,8 @@
                         this.symptoms.push(item.value);
                     });
 
+                this.symptoms.length ? "" : this.symptoms.push("s13");
+
                 this.$router.navigate("/risk-group-quiz/" +
                     this.$route.params.age + "/" +
                     this.symptoms);

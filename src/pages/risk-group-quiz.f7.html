@@ -179,7 +179,33 @@
                         <!--  -->
                         <li>
                             <label class="item-checkbox item-content">
-                                <input type="checkbox" name="q13" value="r13" />
+                                <input type="checkbox" name="q4" value="r13" />
+                                <i class="icon icon-checkbox"></i>
+                                <div class="item-inner">
+                                    <div class="item-text quiz__text">
+                                        Tabagismo
+                                    </div>
+                                </div>
+                            </label>
+                        </li>
+
+                        <!--  -->
+                        <li>
+                            <label class="item-checkbox item-content">
+                                <input type="checkbox" name="q4" value="r14" />
+                                <i class="icon icon-checkbox"></i>
+                                <div class="item-inner">
+                                    <div class="item-text quiz__text">
+                                        Obesidade
+                                    </div>
+                                </div>
+                            </label>
+                        </li>
+
+                        <!--  -->
+                        <li>
+                            <label class="item-checkbox item-content">
+                                <input type="checkbox" name="q13" value="r15" />
                                 <i class="icon icon-checkbox"></i>
                                 <div class="item-inner">
                                     <div class="item-text quiz__text">
@@ -313,7 +339,20 @@
                         <!--  -->
                         <li>
                             <label class="item-checkbox item-content">
-                                <input type="checkbox" name="q13" value="r10" />
+                                <input type="checkbox" name="q4" value="r10" />
+                                <i class="icon icon-checkbox"></i>
+                                <div class="item-inner">
+                                    <div class="item-text quiz__text">
+                                        Obesidade
+                                    </div>
+                                </div>
+                            </label>
+                        </li>
+
+                        <!--  -->
+                        <li>
+                            <label class="item-checkbox item-content">
+                                <input type="checkbox" name="q13" value="r11" />
                                 <i class="icon icon-checkbox"></i>
                                 <div class="item-inner">
                                     <div class="item-text quiz__text">
@@ -366,7 +405,7 @@
 
             getDiagnosis: function() {
                 let age = this.$route.params.age;
-                let symptoms = this.$route.params.symptoms.split(',');
+                let symptoms = this.$route.params.symptoms.split(",");
                 let risks = this.risks;
                 let diagnosis = "asd";
 
@@ -393,7 +432,7 @@
                }
 
                 if (age == "adult") {
-                    const ANY_RISK = risks.length > 0 && !risks.includes("r13");
+                    const ANY_RISK = risks.length > 0 && !risks.includes("r15");
 
                     if (((!FLU || !SHORTNESS_BREATH) && OTHER_SYMPTOMS) ||
                                 (FLU && !ANY_RISK)) {
@@ -405,7 +444,7 @@
                     }
 
                 } else if (age == "child") {
-                    const ANY_RISK = risks.length > 0 && !risks.includes("r10");
+                    const ANY_RISK = risks.length > 0 && !risks.includes("r11");
 
                     if (OTHER_SYMPTOMS) {
                         diagnosis = "gray";
