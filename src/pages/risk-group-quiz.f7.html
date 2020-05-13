@@ -424,11 +424,11 @@
 
                 const SHORTNESS_BREATH = symptoms.includes("s3");
 
-                const FLU = symptoms.includes("s1") &&
+                const FLU = (symptoms.includes("s1") ||
+                            symptoms.includes("s9")) &&
                                 (symptoms.includes("s2") ||
                                     symptoms.includes("s8") ||
-                                    symptoms.includes("s11") ||
-                                    SHORTNESS_BREATH);
+                                    symptoms.includes("s11"));
 
                 const OTHER_SYMPTOMS = symptoms.length > 0 && !symptoms.includes("s13");
 
