@@ -14,7 +14,11 @@
         </div>
         <div class="page-content">
             <div class="block block-title-medium">
-                Você tem alguma dessas condições?
+                {{#js_if "this.$route.params.age == 'adult'"}}
+                    Você tem alguma dessas condições?
+                {{else}}
+                    A criança tem alguma dessas condições?
+                {{/js_if}}
             </div>
 
             {{#js_if "this.$route.params.age == 'adult'"}}

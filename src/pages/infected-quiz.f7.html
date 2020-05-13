@@ -12,7 +12,11 @@
                 <div class="title-row">
                     <div class="col-100">
                         <div class="title--line-height">
-                            Faça uma autoavaliação do seu estado de saúde
+                            {{#js_if "this.$route.params.age == 'adult'"}}
+                                Faça uma autoavaliação do seu estado de saúde
+                            {{else}}
+                                Faça uma avaliação do estado de saúde da criança
+                            {{/js_if}}
                         </div>
                     </div>
                 </div>
@@ -21,9 +25,12 @@
 
         <div class="page-content">
             <div class="block block-title-medium">
-                Quais sintomas está sentindo?
+                {{#js_if "this.$route.params.age == 'adult'"}}
+                    Quais sintomas está sentindo?
+                {{else}}
+                    Quais sintomas ela está sentindo?
+                {{/js_if}}
             </div>
-
             <div class="list no-hairlines" id="infectedQuiz">
                 <ul>
                     <!-- Fever -->
