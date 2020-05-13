@@ -9,7 +9,13 @@
                         <span class="if-not-md">Back</span>
                     </a>
                 </div>
-                <div class="title">Faça uma autoavaliação do seu estado de saúde</div>
+                <div class="title-row">
+                    <div class="col-100">
+                        <div class="title--line-height">
+                            Faça uma autoavaliação do seu estado de saúde
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -92,7 +98,7 @@
                             <i class="icon icon-checkbox"></i>
                             <div class="item-inner">
                                 <div class="item-text quiz__text">
-                                    Dores na cabeça
+                                    Dor de cabeça
                                 </div>
                             </div>
                         </label>
@@ -118,7 +124,7 @@
                             <i class="icon icon-checkbox"></i>
                             <div class="item-inner">
                                 <div class="item-text quiz__text">
-                                    Dor na garganta
+                                    Dor de garganta
                                 </div>
                             </div>
                         </label>
@@ -131,7 +137,7 @@
                             <i class="icon icon-checkbox"></i>
                             <div class="item-inner">
                                 <div class="item-text quiz__text">
-                                    Perda do olfato ou paladar (novo ou piorando)
+                                    Perda do olfato ou paladar (recente ou piorando)
                                 </div>
                             </div>
                         </label>
@@ -207,10 +213,15 @@
                                 align-content-space-around"
                         >
                             <img src="static/images/doubt.svg" class=" card__icon">
-                            <div class="block-title text-align-center">
+                            
+                        </div>
+                        <div
+                            class="card-footer
+                                text-align-center
+                                justify-content-center
+                                card-footer--position-initial"
+                            >
                                 Você tem dúvidas sobre os sintomas?
-                            </div>
-
                         </div>
                     </a>
 
@@ -261,5 +272,13 @@
         text-transform: uppercase;
         color: #1e2f42;
         font-weight: bold;
+    }
+
+    .title--line-height {
+        line-height: 1.3rem;
+    }
+
+    .card-footer--position-initial {
+        position: initial;
     }
 </style>
