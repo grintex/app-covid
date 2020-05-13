@@ -430,14 +430,7 @@
                                     symptoms.includes("s11") ||
                                     SHORTNESS_BREATH);
 
-                const OTHER_SYMPTOMS = symptoms.includes("s4") ||
-                                       symptoms.includes("s5") ||
-                                       symptoms.includes("s6") ||
-                                       symptoms.includes("s7") ||
-                                       symptoms.includes("s9") ||
-                                       symptoms.includes("s10") ||
-                                       symptoms.includes("s11") ||
-                                       symptoms.includes("s12");
+                const OTHER_SYMPTOMS = symptoms.length > 0 && !symptoms.includes("s13");
 
                // No symptoms
                if (symptoms.includes("s13")) {
@@ -458,6 +451,8 @@
 
                 } else if (age == "child") {
                     const ANY_RISK = risks.length > 0 && !risks.includes("r11");
+
+                    console.log(ANY_RISK, OTHER_SYMPTOMS, FLU, SHORTNESS_BREATH);
 
                     if (OTHER_SYMPTOMS) {
                         diagnosis = "gray";
