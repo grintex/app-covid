@@ -15,9 +15,9 @@
         <div class="page-content">
             <div class="block block-title-medium">
                 {{#js_if "this.$route.params.age == 'adult'"}}
-                    Você tem alguma dessas condições?
+                    Você se enquadra em alguma dessas condições?
                 {{else}}
-                    A criança tem alguma dessas condições?
+                    A criança se enquadra em alguma dessas condições?
                 {{/js_if}}
             </div>
 
@@ -44,7 +44,7 @@
                                 <i class="icon icon-checkbox"></i>
                                 <div class="item-inner">
                                     <div class="item-text quiz__text">
-                                        Está grávida
+                                        Gravidez
                                     </div>
                                 </div>
                             </label>
@@ -122,7 +122,7 @@
                                 <i class="icon icon-checkbox"></i>
                                 <div class="item-inner">
                                     <div class="item-text quiz__text">
-                                        Usa medicação para reumatismo (corticoide/imunossupressor)
+                                        Em tratamento com corticoide ou imunossupressor.
                                     </div>
                                 </div>
                             </label>
@@ -183,7 +183,46 @@
                         <!--  -->
                         <li>
                             <label class="item-checkbox item-content">
-                                <input type="checkbox" name="q13" value="r13" />
+                                <input type="checkbox" name="q4" value="r13" />
+                                <i class="icon icon-checkbox"></i>
+                                <div class="item-inner">
+                                    <div class="item-text quiz__text">
+                                        Tabagismo
+                                    </div>
+                                </div>
+                            </label>
+                        </li>
+
+                        <!--  -->
+                        <li>
+                            <label class="item-checkbox item-content">
+                                <input type="checkbox" name="q4" value="r14" />
+                                <i class="icon icon-checkbox"></i>
+                                <div class="item-inner">
+                                    <div class="item-text quiz__text">
+                                        Obesidade
+                                    </div>
+                                </div>
+                            </label>
+                        </li>
+
+                        <!--  -->
+                        <li>
+                            <label class="item-checkbox item-content">
+                                <input type="checkbox" name="q4" value="r15" />
+                                <i class="icon icon-checkbox"></i>
+                                <div class="item-inner">
+                                    <div class="item-text quiz__text">
+                                        Profissional da saúde
+                                    </div>
+                                </div>
+                            </label>
+                        </li>
+
+                        <!--  -->
+                        <li>
+                            <label class="item-checkbox item-content">
+                                <input type="checkbox" name="q13" value="r16" />
                                 <i class="icon icon-checkbox"></i>
                                 <div class="item-inner">
                                     <div class="item-text quiz__text">
@@ -317,11 +356,24 @@
                         <!--  -->
                         <li>
                             <label class="item-checkbox item-content">
-                                <input type="checkbox" name="q13" value="r10" />
+                                <input type="checkbox" name="q4" value="r10" />
                                 <i class="icon icon-checkbox"></i>
                                 <div class="item-inner">
                                     <div class="item-text quiz__text">
-                                        Não me encaixo nessas condições
+                                        Obesidade
+                                    </div>
+                                </div>
+                            </label>
+                        </li>
+
+                        <!--  -->
+                        <li>
+                            <label class="item-checkbox item-content">
+                                <input type="checkbox" name="q13" value="r11" />
+                                <i class="icon icon-checkbox"></i>
+                                <div class="item-inner">
+                                    <div class="item-text quiz__text">
+                                        Não se encaixa nessas condições
                                     </div>
                                 </div>
                             </label>
@@ -370,26 +422,19 @@
 
             getDiagnosis: function() {
                 let age = this.$route.params.age;
-                let symptoms = this.$route.params.symptoms.split(',');
+                let symptoms = this.$route.params.symptoms.split(",");
                 let risks = this.risks;
                 let diagnosis = "asd";
 
                 const SHORTNESS_BREATH = symptoms.includes("s3");
 
-                const FLU = symptoms.includes("s1") &&
+                const FLU = (symptoms.includes("s1") ||
+                            symptoms.includes("s9")) &&
                                 (symptoms.includes("s2") ||
                                     symptoms.includes("s8") ||
-                                    symptoms.includes("s11") ||
-                                    SHORTNESS_BREATH);
+                                    symptoms.includes("s11"));
 
-                const OTHER_SYMPTOMS = symptoms.includes("s4") ||
-                                       symptoms.includes("s5") ||
-                                       symptoms.includes("s6") ||
-                                       symptoms.includes("s7") ||
-                                       symptoms.includes("s9") ||
-                                       symptoms.includes("s10") ||
-                                       symptoms.includes("s11") ||
-                                       symptoms.includes("s12");
+                const OTHER_SYMPTOMS = symptoms.length > 0 && !symptoms.includes("s13");
 
                // No symptoms
                if (symptoms.includes("s13")) {
@@ -397,7 +442,7 @@
                }
 
                 if (age == "adult") {
-                    const ANY_RISK = risks.length > 0 && !risks.includes("r13");
+                    const ANY_RISK = risks.length > 0 && !risks.includes("r16");
 
                     if (((!FLU || !SHORTNESS_BREATH) && OTHER_SYMPTOMS) ||
                                 (FLU && !ANY_RISK)) {
@@ -409,7 +454,9 @@
                     }
 
                 } else if (age == "child") {
-                    const ANY_RISK = risks.length > 0 && !risks.includes("r10");
+                    const ANY_RISK = risks.length > 0 && !risks.includes("r11");
+
+                    console.log(ANY_RISK, OTHER_SYMPTOMS, FLU, SHORTNESS_BREATH);
 
                     if (OTHER_SYMPTOMS) {
                         diagnosis = "gray";

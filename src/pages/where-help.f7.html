@@ -116,9 +116,38 @@
 </script>
 
 <style>
+    /* extra small */
     .help-card {
-        height: 20vh;
+        height: 40vh;
         position: relative;
+    }
+
+    /* small */
+    @media (min-width: 576px) {
+        .help-card {
+            height: 35vh;
+        }
+    }
+
+    /* medium */
+    @media (min-width: 768px) {
+        .help-card {
+            height: 30vh;
+        }
+    }
+
+    /* large */
+    @media (min-width: 992px) {
+        .help-card {
+            height: 25vh;
+        }
+    }
+
+    /* extra large */
+    @media (min-width: 1200px) {
+        .help-card {
+            height: 20vh;
+        }
     }
 
     .help-card div .card-content {
