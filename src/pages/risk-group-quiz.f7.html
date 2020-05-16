@@ -427,11 +427,28 @@
 
             },
 
+            sendDiagnosisAnalytics: function(age, symptoms, risks, diagnosis) {
+                let data = {
+                    age: age,
+                    risks: risks,
+                    symptoms: symptoms,
+                    diagnosis: diagnosis
+                };
+                let dataJson = JSON.stringify(data);
+
+                gtag('event', 'infected_quiz', {
+                    'event_category' : diagnosis,
+                    'event_label' : dataJson
+                });
+
+                console.log('[analytics] infected_quiz ' + dataJson);
+            },
+
             getDiagnosis: function() {
                 let age = this.$route.params.age;
                 let symptoms = this.$route.params.symptoms.split(",");
                 let risks = this.risks;
-                let diagnosis = "asd";
+                let diagnosis = "unknown";
 
                 const SHORTNESS_BREATH = symptoms.includes("s3");
 
@@ -478,6 +495,7 @@
                     diagnosis = "red";
                 }
 
+                this.sendDiagnosisAnalytics(age, symptoms, risks, diagnosis);
                 this.$router.navigate("/diagnosis/" + diagnosis);
             }
         },
