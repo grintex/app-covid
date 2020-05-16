@@ -22,11 +22,8 @@ var app = new Framework7({
     name: 'coronavirus-chapeco', // App name
     theme: 'auto', // Automatic theme detection
 
-
-
     // App routes
     routes: routes,
-
 
     // Input settings
     input: {
@@ -44,6 +41,14 @@ var app = new Framework7({
             if (f7.device.cordova) {
                 // Init cordova APIs (see cordova-app.js)
                 cordovaApp.init(f7);
+            }
+        },
+
+        // Google Analytics
+        pageAfterIn: function (page) {
+            if (page.direction == 'forward') {
+                gtag('event', 'screen_view', { 'screen_name': page.name});
+                console.log('[analytics] screen_view ' + page.name);
             }
         },
     },
