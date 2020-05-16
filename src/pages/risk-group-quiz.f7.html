@@ -13,9 +13,15 @@
             </div>
         </div>
         <div class="page-content">
-            <div class="block block-title-medium">
-                Você se enquadra em alguma dessas condições?
-            </div>
+            {{#js_if "this.$route.params.age == 'adult'"}}
+                <div class="block block-title-medium">
+                    Você se enquadra em alguma dessas condições?
+                </div>
+            {{else}}
+                <div class="block block-title-medium">
+                    A criança se enquadra em alguma dessas condições?
+                </div>
+            {{/js_if}}
 
             {{#js_if "this.$route.params.age == 'adult'"}}
                 <div class="list no-hairlines" id="riskQuiz">
@@ -369,7 +375,7 @@
                                 <i class="icon icon-checkbox"></i>
                                 <div class="item-inner">
                                     <div class="item-text quiz__text">
-                                        Não me encaixo nessas condições
+                                        Não se encaixa nessas condições
                                     </div>
                                 </div>
                             </label>
