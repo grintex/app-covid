@@ -13,52 +13,50 @@
             </div>
         </div>
         <div class="page-content">
+
+            <div class="block block-strong">
+                <p class="item-text">
+                    A orientação é que você procure serviço de saúde presencial apenas se apresentar falta de ar ou piora de outros sintomas.
+                </p>
+            </div>
+
             <div class="row">
                 <div class="col-50">
-                    <a href="/when-help/" class="card help-card
-                                    display-flex
-                                    flex-direction-column
-                                    justify-content-center
-                                    align-itens-center
-                                    align-content-space-around"
-                    >
-                        <div class="card-content card-content-padding">
+                    <a href="/when-help/">
+                        <div class="card help-card no-margin-right">
+                            <div class="card-content padding">
+                                <div class="display-flex
+                                            flex-direction-column
+                                            align-items-center
+                                            padding"
+                                >
+                                    <img class="help-card__icon" src="static/images/question-2.svg">
+                                </div>
 
-                            <div class="display-flex
-                                        flex-direction-column
-                                        align-items-center
-                                        padding"
-                            >
-                                <img class="help-card__icon" src="static/images/question-2.svg">
-                            </div>
-
-                            <div class="help-card__text">
-                                Quando procurar atendimento?
+                                <div class="help-card__text">
+                                    Quando procurar atendimento?
+                                </div>
                             </div>
                         </div>
                     </a>
                 </div>
 
                 <div class="col-50">
-                    <a href="/places-help/" class="card help-card
-                                    display-flex
-                                    flex-direction-column
-                                    justify-content-center
-                                    align-itens-center
-                                    align-content-space-around"
-                    >
-                        <div class="card-content card-content-padding">
+                    <a href="https://www.google.com.br/maps/search/UBS/@-27.0836588,-52.6696408,13z" class="external">
+                        <div class="card help-card no-margin-left">
+                            <div class="card-content card-content-padding">
 
-                            <div class="display-flex
-                                        flex-direction-column
-                                        align-items-center
-                                        padding"
-                            >
-                                <img class="help-card__icon" src="static/images/map.svg">
-                            </div>
+                                <div class="display-flex
+                                            flex-direction-column
+                                            align-items-center
+                                            padding"
+                                >
+                                    <img class="help-card__icon" src="static/images/map.svg">
+                                </div>
 
-                            <div class="help-card__text">
-                                Onde procurar atendimento?
+                                <div class="help-card__text">
+                                    Encontre a Unidade Básica de Saúde mais próxima de você
+                                </div>
                             </div>
                         </div>
                     </a>
@@ -68,50 +66,42 @@
 
             <div class="row">
                 <div class="col-50">
-                    <a href="/other-places-help/" class="card help-card
-                                    display-flex
-                                    flex-direction-column
-                                    justify-content-center
-                                    align-itens-center
-                                    align-content-space-around"
-                    >
-                        <div class="card-content card-content-padding">
+                    <a href="/other-places-help/">
+                        <div class="card help-card no-margin-right">
+                            <div class="card-content card-content-padding">
 
-                            <div class="display-flex
-                                        flex-direction-column
-                                        align-items-center
-                                        padding"
-                            >
-                                <img class="help-card__icon" src="static/images/hospital.svg">
-                            </div>
+                                <div class="display-flex
+                                            flex-direction-column
+                                            align-items-center
+                                            padding"
+                                >
+                                    <img class="help-card__icon" src="static/images/hospital.svg">
+                                </div>
 
-                            <div class="help-card__text">
-                                Outros locais de atendimento em Chapecó
+                                <div class="help-card__text">
+                                    Atendimento emergencial em Chapecó
+                                </div>
                             </div>
                         </div>
                     </a>
                 </div>
 
                 <div class="col-50">
-                    <a href="/useful-phones/" class="card help-card
-                                    display-flex
-                                    flex-direction-column
-                                    justify-content-center
-                                    align-itens-center
-                                    align-content-space-around"
-                    >
-                        <div class="card-content card-content-padding">
+                    <a href="/useful-phones/">
+                        <div class="card help-card no-margin-left">
+                            <div class="card-content card-content-padding">
 
-                            <div class="display-flex
-                                        flex-direction-column
-                                        align-items-center
-                                        padding"
-                            >
-                                <img class="help-card__icon" src="static/images/call.svg">
-                            </div>
+                                <div class="display-flex
+                                            flex-direction-column
+                                            align-items-center
+                                            padding"
+                                >
+                                    <img class="help-card__icon" src="static/images/call.svg">
+                                </div>
 
-                            <div class="help-card__text">
-                                Telefones úteis
+                                <div class="help-card__text">
+                                    Lista de telefones úteis
+                                </div>
                             </div>
                         </div>
                     </a>
@@ -126,13 +116,47 @@
 </script>
 
 <style>
+    /* extra small */
     .help-card {
-        background-color: #f6f6f6;
-        height: 30vh;
+        height: 40vh;
+        position: relative;
+    }
+
+    /* small */
+    @media (min-width: 576px) {
+        .help-card {
+            height: 35vh;
+        }
+    }
+
+    /* medium */
+    @media (min-width: 768px) {
+        .help-card {
+            height: 30vh;
+        }
+    }
+
+    /* large */
+    @media (min-width: 992px) {
+        .help-card {
+            height: 25vh;
+        }
+    }
+
+    /* extra large */
+    @media (min-width: 1200px) {
+        .help-card {
+            height: 20vh;
+        }
+    }
+
+    .help-card div .card-content {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
     }
 
     .help-card__text {
-        text-transform: uppercase;
         color: #1e2f42;
         text-align: center;
     }

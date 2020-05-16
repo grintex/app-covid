@@ -9,7 +9,7 @@
                         <span class="if-not-md">Back</span>
                     </a>
                 </div>
-                <div class="title">Diagnóstico</div>
+                <div class="title">Conduta</div>
             </div>
         </div>
         <div class="page-content">
@@ -60,10 +60,10 @@
                             precaução e prevenção, mantendo-se em distanciamento \
                             social. Em caso de dúvidas sobre COVID-19 entre em \
                             contato com a central de teleatendimento de dúvidas \
-                            gerais pelo número " + this. addPhoneLink("3321-0027") + "\
-                             de Chapecó.";
+                            gerais de Chapecó pelo número " +
+                            this. addPhoneLink("(49) 3321-0027") + ".";
 
-                        iconElem.src = "/static/images/quarantine.svg";
+                        iconElem.src = "static/images/quarantine.svg";
 
                         break;
 
@@ -74,34 +74,34 @@
                             social. Recomendamos que monitore seus sintomas e \
                             em caso de persistência ou piora entre em contato \
                             com a central de teleatendimento pelo número \
-                            " + this.addPhoneLink("2049-6500") + " de Chapecó \
+                            " + this.addPhoneLink("(49) 2049-6500") + " de Chapecó \
                             ou procure atendimento médico presencial. Em caso \
                             de dúvidas sobre COVID-19 ligue para a central de \
-                            teleatendimento de dúvidas gerais " +
-                            this.addPhoneLink("3321-0027") + "de Chapecó.";
+                            teleatendimento de dúvidas gerais de Chapecó \
+                            pelo número " + this.addPhoneLink("(49) 3321-0027") + ".";
 
-                        iconElem.src = "/static/images/quarantine.svg";
+                        iconElem.src = "static/images/quarantine.svg";
 
                         break;
 
                     case "yellow":
                         msgElem.innerHTML = "Com base em suas respostas, a \
                             orientação é que você entre em contato com o \
-                            teleatendimento pelo número " +
-                            this.addPhoneLink("2049-6500") + " de Chapecó.";
+                            teleatendimento de Chapecó pelo número " +
+                            this.addPhoneLink("(49) 2049-6500") + ".";
 
-                        iconElem.src = "/static/images/call.svg";
+                        iconElem.src = "static/images/call.svg";
 
                         break;
 
                     case "red":
                         msgElem.innerHTML = "Com base em suas respostas, a \
                             orientação é que você procure atendimento presencial \
-                            imediato. <a class='link' href='/where-help/'> \
+                            imediatamente. <a class='link' href='/other-places-help/'> \
                             Clique aqui</a> para encontrar o local de \
                             atendimento mais próximo de você.";
 
-                        iconElem.src = "/static/images/ambulance.svg";
+                        iconElem.src = "static/images/ambulance.svg";
                         break;
                 }
 
@@ -112,7 +112,7 @@
             addPhoneLink: function(phone) {
                 return `
                 <a class="link external"
-                    href="tel:${phone.replace('-', '')}"
+                    href="tel:${phone.replace('-', '').replace('(', '').replace(')', '')}"
                     target="_system"
                 >
                     ${phone}
