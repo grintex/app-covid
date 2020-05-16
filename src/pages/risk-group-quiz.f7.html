@@ -13,15 +13,13 @@
             </div>
         </div>
         <div class="page-content">
-            {{#js_if "this.$route.params.age == 'adult'"}}
-                <div class="block block-title-medium">
+            <div class="block block-title-medium">
+                {{#js_if "this.$route.params.age == 'adult'"}}
                     Você se enquadra em alguma dessas condições?
-                </div>
-            {{else}}
-                <div class="block block-title-medium">
+                {{else}}
                     A criança se enquadra em alguma dessas condições?
-                </div>
-            {{/js_if}}
+                {{/js_if}}
+            </div>
 
             {{#js_if "this.$route.params.age == 'adult'"}}
                 <div class="list no-hairlines" id="riskQuiz">
@@ -414,12 +412,19 @@
 
         methods: {
             handleClick: function() {
-                document.querySelectorAll("#riskQuiz input[type='checkbox']:checked")
-                    .forEach(item => {
+                let risks = document.querySelectorAll("#riskQuiz input[type='checkbox']:checked");
+                
+                if (risks.length) {
+                    risks.forEach(item => {
                         this.risks.push(item.value);
                     });
+                    this.getDiagnosis();
+                }
+                else {
+                    this.$app.dialog.alert("Selecione uma das opções anteriores.", "Coronavírus Chapecó");
+                }
 
-                this.getDiagnosis();
+
             },
 
             getDiagnosis: function() {
