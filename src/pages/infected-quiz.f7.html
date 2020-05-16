@@ -257,14 +257,19 @@
 
         methods: {
             handleClick: function() {
-                document.querySelectorAll("#infectedQuiz input[type='checkbox']:checked")
-                    .forEach(item => {
+                let symptoms = document.querySelectorAll("#infectedQuiz input[type='checkbox']:checked");
+                if (symptoms.length) {
+                    symptoms.forEach(item => {
                         this.symptoms.push(item.value);
                     });
+                    this.$router.navigate("/risk-group-quiz/" +
+                        this.$route.params.age + "/" +
+                        this.symptoms);
+                }
+                else {
+                    this.$app.dialog.alert("Selecione uma das opções anteriores.", "Coronavírus Chapecó");
+                }
 
-                this.$router.navigate("/risk-group-quiz/" +
-                    this.$route.params.age + "/" +
-                    this.symptoms);
             },
         },
     };
