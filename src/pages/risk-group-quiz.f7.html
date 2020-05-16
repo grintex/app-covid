@@ -412,12 +412,19 @@
 
         methods: {
             handleClick: function() {
-                document.querySelectorAll("#riskQuiz input[type='checkbox']:checked")
-                    .forEach(item => {
+                let risks = document.querySelectorAll("#riskQuiz input[type='checkbox']:checked");
+                
+                if (risks.length) {
+                    risks.forEach(item => {
                         this.risks.push(item.value);
                     });
+                    this.getDiagnosis();
+                }
+                else {
+                    this.$app.dialog.alert("Selecione uma das opções anteriores.", "Coronavírus Chapecó");
+                }
 
-                this.getDiagnosis();
+
             },
 
             getDiagnosis: function() {
