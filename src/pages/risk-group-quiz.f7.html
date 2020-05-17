@@ -213,6 +213,19 @@
                                 <i class="icon icon-checkbox"></i>
                                 <div class="item-inner">
                                     <div class="item-text quiz__text">
+                                        Hipertensão
+                                    </div>
+                                </div>
+                            </label>
+                        </li>
+
+                        <!--  -->
+                        <li>
+                            <label class="item-checkbox item-content">
+                                <input type="checkbox" name="q4" value="r16" />
+                                <i class="icon icon-checkbox"></i>
+                                <div class="item-inner">
+                                    <div class="item-text quiz__text">
                                         Profissional da saúde
                                     </div>
                                 </div>
@@ -222,7 +235,7 @@
                         <!--  -->
                         <li>
                             <label class="item-checkbox item-content">
-                                <input type="checkbox" name="q13" value="r16" />
+                                <input type="checkbox" name="q13" value="r17" />
                                 <i class="icon icon-checkbox"></i>
                                 <div class="item-inner">
                                     <div class="item-text quiz__text">
@@ -421,7 +434,7 @@
                     this.getDiagnosis();
                 }
                 else {
-                    this.$app.dialog.alert("Selecione uma das opções anteriores.", "Coronavírus Chapecó");
+                    this.$app.dialog.alert("Selecione ao menos uma das opções anteriores.", "Coronavírus Chapecó");
                 }
 
 
@@ -466,7 +479,7 @@
                }
 
                 if (age == "adult") {
-                    const ANY_RISK = risks.length > 0 && !risks.includes("r16");
+                    const ANY_RISK = risks.length > 0 && !risks.includes("r17");
 
                     if (((!FLU || !SHORTNESS_BREATH) && OTHER_SYMPTOMS) ||
                                 (FLU && !ANY_RISK)) {
