@@ -16,8 +16,6 @@ var Abalytics = {
     },
 
     addScreenTracking: function() {
-        var f7 = Abalytics.f7;
-
         $$(document).on('page:afterin', function (e) {
             var page = e.detail;
 
@@ -26,9 +24,8 @@ var Abalytics = {
             }
 
             Abalytics.trackScreenView(page.name);
-        })
-  
-    },
+        });
+      },
 
     track: function(type, label, data) {
         if(type != 'event') {
@@ -41,8 +38,8 @@ var Abalytics = {
             return;
         }
 
-        gtag(type, label, data);
         console.log('[Abalytics] ' + type + ' | ' + label + ': ', data);
+        gtag(type, label, data);
     },
 
     init: function (f7) {
