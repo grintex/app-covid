@@ -1,7 +1,7 @@
 {
   "name": "cc.uffs.extension.covid",
   "displayName": "Coronavírus Chapeco",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Aplicativo para orientação e informação da população sobre medidas de prevenção contra a infecção pelo novo Coronavírus, com foco em Chapecó/SC.",
   "main": "index.js",
   "scripts": {
