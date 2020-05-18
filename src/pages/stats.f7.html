@@ -137,7 +137,7 @@
                 var self = this;
                 var app = self.$app;
 
-                app.request.json('http://app-covid.api.uffs.cc/v0/stats', function(data) {
+                app.request.json('https://app-covid.api.uffs.cc/v0/stats', function(data) {
                     self.$setState({
                         current: self.getLatestStatByPlaceKey('cco', data),
                     });
