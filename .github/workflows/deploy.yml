@@ -1,17 +1,26 @@
 name: deploy
 on:
   push:
-    branches:
+    branches:    
       - master
 env:
   PROD_HOST: coronavirus-chapeco.app.uffs.cc
-  PROD_WEB_DIRECTORY: ~/coronavirus-chapeco.app.uffs.cc
+  PROD_WEB_DIRECTORY: ~/coronavirus-chapeco.app.uffs.cc/www/
+  PROD_WEB_URL: https://coronavirus-chapeco.app.uffs.cc
 jobs:
-  deploy:
-    name: Deploy to production
+  build-deploy-audit:
+    name: Build deploy
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '8.10'
+    - run: sudo npm install -g --unsafe-perm framework7-cli
+    - name: Extract branch name
+      shell: bash
+      run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+      id: extract_branch
     - name: Prepare deploy server
       uses: appleboy/ssh-action@master
       with:
@@ -19,5 +28,20 @@ jobs:
         username: ${{ secrets.PROD_USERNAME }}
         password: ${{ secrets.PROD_PASSWORD }}
         script: |
-          cd ${{ env.PROD_WEB_DIRECTORY }}
-          git pull
+          mkdir -p ${{ env.PROD_WEB_DIRECTORY }}
+    - name: Build app
+      run: |
+        sudo npm install
+        sudo npm run build-prod
+    - name: Deploy app via SSH
+      uses: garygrossgarten/github-action-scp@release
+      with:
+        local: ${{ github.workspace }}/www
+        remote: ${{ env.PROD_WEB_DIRECTORY }}
+        host: ${{ env.PROD_HOST }}
+        username: ${{ secrets.PROD_USERNAME }}
+        password: ${{ secrets.PROD_PASSWORD }}
+    - name: Summary
+      run: |
+        echo "Summary:"
+        echo " Live URL: ${{ env.PROD_WEB_URL }}"
