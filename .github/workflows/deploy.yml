@@ -5,7 +5,7 @@ on:
       - master
 env:
   PROD_HOST: coronavirus-chapeco.app.uffs.cc
-  PROD_WEB_DIRECTORY: ~/coronavirus-chapeco.app.uffs.cc/www/
+  PROD_WEB_DIRECTORY: /home/ccuffscovidapp/coronavirus-chapeco.app.uffs.cc/www
   PROD_WEB_URL: https://coronavirus-chapeco.app.uffs.cc
 jobs:
   build-deploy-audit:
@@ -37,7 +37,7 @@ jobs:
       uses: garygrossgarten/github-action-scp@release
       with:
         local: ${{ github.workspace }}/www
-        remote: ${{ env.PROD_WEB_DIRECTORY }}
+        remote: ${{ env.PROD_WEB_DIRECTORY }}/
         host: ${{ env.PROD_HOST }}
         username: ${{ secrets.PROD_USERNAME }}
         password: ${{ secrets.PROD_PASSWORD }}
