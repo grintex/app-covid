@@ -83,19 +83,23 @@
             </div>
 
             <div class="menu-grid">
+                {{#if notInstalled}}
                 <a href="#" @click="install" class="menu-grid__item small">
                     <div class="item-inner">
                         <i class="material-icons">get_app</i>
                         <div class="item-title">Instalar / adicionar à tela inicial</div>
                     </div>
                 </a>
+                {{/if}}
 
+                {{#if shareAd}}
                 <a href="#" @click="share" class="menu-grid__item small">
                     <div class="item-inner">
                         <i class="material-icons">share</i>
                         <div class="item-title">Compartilhe esse aplicativo</div>
                     </div>
                 </a>
+                {{/if}}
             </div>
         </div>
     </div>
@@ -106,6 +110,10 @@
         data: function() {
             return {
                 appShareURL: 'https://uffs.cc/app-covid-chapeco',
+                notInstalled: function() {
+                    return !window.matchMedia('(display-mode: standalone)').matches;
+                },
+                shareAd: false
             }
         },
 
