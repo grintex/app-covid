@@ -449,12 +449,10 @@
                 };
                 let dataJson = JSON.stringify(data);
 
-                gtag('event', 'infected_quiz', {
+                this.$app.abalytics.track('event', 'infected_quiz', {
                     'event_category' : diagnosis,
                     'event_label' : dataJson
                 });
-
-                console.log('[analytics] infected_quiz ' + dataJson);
             },
 
             getDiagnosis: function() {
