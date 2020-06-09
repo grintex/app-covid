@@ -84,7 +84,7 @@
 
             <div class="menu-grid">
                 {{#if notInstalled}}
-                <a href="#" @click="install" class="menu-grid__item small">
+                <a href="#" @click="install" class="menu-grid__item small" id="link-install-app">
                     <div class="item-inner">
                         <i class="material-icons">get_app</i>
                         <div class="item-title">Instalar / adicionar à tela inicial</div>
@@ -114,6 +114,26 @@
                     return !window.matchMedia('(display-mode: standalone)').matches;
                 },
                 shareAd: false
+            }
+        },
+
+        on: {
+            pageInit: function(e, page) {
+                var app = this.$app;
+                var link = document.getElementById('link-install-app');
+                
+                if(!link) {
+                    return;
+                }
+
+                window.addEventListener('appinstalled', function(evt) {
+                    app.toast.create({
+                        text: 'Pronto! Adicionado à tela inicial.',
+                        closeTimeout: 3000,
+                    }).open();
+
+                    link.style.display = 'none';
+                });
             }
         },
 
