@@ -119,6 +119,7 @@
                         text: 'Não foi possível adicionar à tela inicial.',
                         closeTimeout: 2000,
                     }).open();
+                    return;
                 }
 
                 // Show the install prompt
@@ -136,6 +137,10 @@
 
             shareToClipboard: function() {
                 var app = this.$app;
+
+                if(!navigator.clipboard) {
+                    return;
+                }
 
                 navigator.clipboard.writeText(this.appShareURL).then(function() {
                     // success
@@ -157,7 +162,7 @@
 
                 app.toast.create({
                     text: this.appShareURL,
-                    closeTimeout: 2000,
+                    closeTimeout: 6000,
                 }).open();
 
                 if(!navigator.share) {
