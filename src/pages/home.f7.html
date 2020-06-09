@@ -111,7 +111,27 @@
 
         methods: {
             install: function() {
-                console.log('install');
+                var app = this.$app;
+                var deferredPrompt = app.deferredInstallPrompt;
+
+                if(!deferredPrompt) {
+                    app.toast.create({
+                        text: 'Não foi possível adicionar à tela inicial.',
+                        closeTimeout: 2000,
+                    }).open();
+                }
+
+                // Show the install prompt
+                deferredPrompt.prompt();
+
+                // Wait for the user to respond to the prompt
+                deferredPrompt.userChoice.then(function(choiceResult) {
+                    if (choiceResult.outcome === 'accepted') {
+                        console.log('User accepted the install prompt');
+                    } else {
+                        console.log('User dismissed the install prompt');
+                    }
+                });
             },
 
             shareToClipboard: function() {
