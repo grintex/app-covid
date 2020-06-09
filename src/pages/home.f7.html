@@ -81,12 +81,98 @@
                     </div>
                 </a>
             </div>
+
+            <div class="menu-grid">
+                <a href="#" @click="install" class="menu-grid__item small">
+                    <div class="item-inner">
+                        <i class="material-icons">get_app</i>
+                        <div class="item-title">Instalar / adicionar à tela inicial</div>
+                    </div>
+                </a>
+
+                <a href="#" @click="share" class="menu-grid__item small">
+                    <div class="item-inner">
+                        <i class="material-icons">share</i>
+                        <div class="item-title">Compartilhe esse aplicativo</div>
+                    </div>
+                </a>
+            </div>
         </div>
     </div>
 </template>
 
 <script>
-    export default {}
+    export default {
+        data: function() {
+            return {
+                appShareURL: 'https://uffs.cc/app-covid-chapeco',
+            }
+        },
+
+        methods: {
+            install: function() {
+                var app = this.$app;
+                var deferredPrompt = app.deferredInstallPrompt;
+
+                if(!deferredPrompt) {
+                    app.toast.create({
+                        text: 'Não foi possível adicionar à tela inicial.',
+                        closeTimeout: 2000,
+                    }).open();
+                }
+
+                // Show the install prompt
+                deferredPrompt.prompt();
+
+                // Wait for the user to respond to the prompt
+                deferredPrompt.userChoice.then(function(choiceResult) {
+                    if (choiceResult.outcome === 'accepted') {
+                        console.log('User accepted the install prompt');
+                    } else {
+                        console.log('User dismissed the install prompt');
+                    }
+                });
+            },
+
+            shareToClipboard: function() {
+                var app = this.$app;
+
+                navigator.clipboard.writeText(this.appShareURL).then(function() {
+                    // success
+                    app.toast.create({
+                        text: 'Link copiado! Basta colar ele agora, ex. no WhatsApp.',
+                        closeTimeout: 5000,
+                    }).open();
+                }, function() {
+                    // fail
+                    app.toast.create({
+                        text: 'Hum, algum problema aconteceu. Desculpe.',
+                        closeTimeout: 2000,
+                    }).open();
+                });
+            },
+
+            share: function() {
+                var app = this.$app;
+
+                app.toast.create({
+                    text: this.appShareURL,
+                    closeTimeout: 2000,
+                }).open();
+
+                if(!navigator.share) {
+                    this.shareToClipboard();
+                    return;                    
+                }
+
+                navigator.share({
+                    title: 'Coronavírus Chapecó',
+                    text: 'Aplicativo para orientação e informação contra o novo Coronavírus com foco em Chapecó/SC.',
+                    url: this.appShareURL,
+                });
+            }
+        }
+    }
 </script>
 
 <style>
@@ -104,6 +190,22 @@
     color: #1e2f42;
     font-weight: bold;
     padding: 10px;
+}
+
+.menu-grid__item.small {
+    vertical-align: middle;
+    font-weight: 400;
+    padding: 8px;
+    text-align: left;
+    background-color: #dff1e0;
+    font-size: 0.8em;
+}
+
+.menu-grid__item.small i {
+    float: left;
+    margin-top: 8px;
+    margin-right: 10px;
+    font-size: 1.8em;
 }
 
 .menu-grid__icon {

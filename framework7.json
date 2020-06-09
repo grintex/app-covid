@@ -1,6 +1,7 @@
 {
   "cwd": "D:\\wamp\\www\\app-covid",
   "type": [
+    "pwa",
     "cordova"
   ],
   "name": "coronavirus-chapeco",
@@ -27,6 +28,7 @@
   "cordova": {
     "folder": "cordova",
     "platforms": [
+      "ios",
       "android"
     ],
     "plugins": [
