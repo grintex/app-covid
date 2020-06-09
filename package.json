@@ -7,11 +7,15 @@
   "license": "UNLICENSED",
   "scripts": {
     "start": "npm run dev",
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --config ./build/webpack.config.js --host=0.0.0.0",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --config ./build/webpack.config.js",
     "build-dev": "cross-env NODE_ENV=development node ./build/build.js",
     "build-prod": "cross-env NODE_ENV=production node ./build/build.js",
     "build-dev-cordova": "cross-env TARGET=cordova cross-env NODE_ENV=development node ./build/build.js && cd cordova && cordova build --debug",
     "build-prod-cordova": "cross-env TARGET=cordova cross-env NODE_ENV=production node ./build/build.js && cd cordova && cordova build --release",
+    "build-dev-cordova-ios": "cross-env TARGET=cordova cross-env NODE_ENV=development node ./build/build.js && cd cordova && cordova build ios --debug",
+    "build-prod-cordova-ios": "cross-env TARGET=cordova cross-env NODE_ENV=production node ./build/build.js && cd cordova && cordova build ios --release",
+    "build-dev-cordova-android": "cross-env TARGET=cordova cross-env NODE_ENV=development node ./build/build.js && cd cordova && cordova build android --debug",
+    "build-prod-cordova-android": "cross-env TARGET=cordova cross-env NODE_ENV=production node ./build/build.js && cd cordova && cordova build android --release",
     "postinstall": "cpy ./node_modules/framework7-icons/fonts/*.* ./src/fonts/"
   },
   "browserslist": [
@@ -23,26 +27,26 @@
     "Samsung >= 5"
   ],
   "dependencies": {
-    "dom7": "^2.1.3",
-    "framework7": "^5.7.0",
-    "framework7-icons": "^3.0.0",
+    "dom7": "^2.1.5",
+    "framework7": "^5.7.7",
+    "framework7-icons": "^3.0.1",
     "template7": "^1.4.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.9.0",
+    "@babel/core": "^7.10.2",
     "@babel/plugin-syntax-dynamic-import": "^7.8.3",
-    "@babel/plugin-transform-runtime": "^7.9.0",
-    "@babel/preset-env": "^7.9.5",
-    "@babel/runtime": "^7.9.2",
+    "@babel/plugin-transform-runtime": "^7.10.1",
+    "@babel/preset-env": "^7.10.2",
+    "@babel/runtime": "^7.10.2",
     "babel-loader": "^8.1.0",
-    "chalk": "^4.0.0",
-    "copy-webpack-plugin": "^5.1.1",
-    "cpy-cli": "^3.1.0",
+    "chalk": "^4.1.0",
+    "copy-webpack-plugin": "^6.0.2",
+    "cpy-cli": "^3.1.1",
     "cross-env": "^7.0.2",
     "css-loader": "^3.5.3",
     "file-loader": "^6.0.0",
-    "framework7-component-loader": "^2.0.0",
-    "html-webpack-plugin": "^4.2.0",
+    "framework7-component-loader": "^2.1.0",
+    "html-webpack-plugin": "^4.3.0",
     "mini-css-extract-plugin": "^0.9.0",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "ora": "^4.0.4",
@@ -50,10 +54,11 @@
     "postcss-preset-env": "^6.7.0",
     "rimraf": "^3.0.2",
     "style-loader": "^1.2.1",
-    "terser-webpack-plugin": "^2.3.6",
+    "terser-webpack-plugin": "^3.0.3",
     "url-loader": "^4.1.0",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "^3.10.3"
+    "webpack-dev-server": "^3.11.0",
+    "workbox-webpack-plugin": "^5.1.3"
   }
 }

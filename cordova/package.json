@@ -14,8 +14,9 @@
   "license": "Apache-2.0",
   "dependencies": {
     "cordova-android": "^8.1.0",
+    "cordova-ios": "^5.1.1",
     "cordova-plugin-keyboard": "^1.2.0",
-    "cordova-plugin-splashscreen": "^5.0.3",
+    "cordova-plugin-splashscreen": "^5.0.4",
     "cordova-plugin-statusbar": "^2.4.3",
     "cordova-plugin-wkwebview-engine": "^1.2.1",
     "cordova-plugin-wkwebview-file-xhr": "^2.1.4"
@@ -29,6 +30,7 @@
       "cordova-plugin-whitelist": {}
     },
     "platforms": [
+      "ios",
       "android"
     ]
   },
