@@ -11,6 +11,8 @@ import '../css/app.css';
 import cordovaApp from './cordova-app.js';
 // Import Routes
 import routes from './routes.js';
+// Import analytics stuff 
+import Abalytics from './abalytics.js';
 
 // Import main app component
 import App from '../app.f7.html';
@@ -42,14 +44,8 @@ var app = new Framework7({
                 // Init cordova APIs (see cordova-app.js)
                 cordovaApp.init(f7);
             }
-        },
 
-        // Google Analytics
-        pageAfterIn: function (page) {
-            if (page.direction == 'forward') {
-                gtag('event', 'screen_view', { 'screen_name': page.name});
-                console.log('[analytics] screen_view ' + page.name);
-            }
+            Abalytics.init(f7);
         },
     },
 });
