@@ -25,6 +25,11 @@ var app = new Framework7({
     // App routes
     routes: routes,
 
+    // Register service worker
+    serviceWorker: Framework7.device.cordova ? {} : {
+        path: '/service-worker.js',
+    },
+
     // Input settings
     input: {
         scrollIntoViewOnFocus: Framework7.device.cordova && !Framework7.device.electron,
