@@ -83,14 +83,16 @@
             </div>
 
             <div class="menu-grid">
-                {{#if notInstalled}}
-                <a href="#" @click="install" class="menu-grid__item small" id="link-install-app">
-                    <div class="item-inner">
-                        <i class="material-icons">get_app</i>
-                        <div class="item-title">Instalar / adicionar à tela inicial</div>
-                    </div>
-                </a>
-                {{/if}}
+                <% if (process.env.TARGET === 'web') { %>
+                    {{#if notInstalled}}
+                    <a href="#" @click="install" class="menu-grid__item small" id="link-install-app">
+                        <div class="item-inner">
+                            <i class="material-icons">get_app</i>
+                            <div class="item-title">Instalar / adicionar à tela inicial</div>
+                        </div>
+                    </a>
+                    {{/if}}
+                <% } %>
 
                 {{#if shareAd}}
                 <a href="#" @click="share" class="menu-grid__item small">
