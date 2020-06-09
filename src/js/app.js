@@ -27,6 +27,11 @@ var app = new Framework7({
     // App routes
     routes: routes,
 
+    // Register service worker
+    serviceWorker: Framework7.device.cordova ? {} : {
+        path: '/service-worker.js',
+    },
+
     // Input settings
     input: {
         scrollIntoViewOnFocus: Framework7.device.cordova && !Framework7.device.electron,
@@ -43,6 +48,15 @@ var app = new Framework7({
             if (f7.device.cordova) {
                 // Init cordova APIs (see cordova-app.js)
                 cordovaApp.init(f7);
+            } else {
+                // Save context to allow 'Add to home screen'
+                f7.deferredInstallPrompt = null;
+
+                window.addEventListener('beforeinstallprompt', function(e) {
+                    // Stash the event so it can be triggered later.
+                    f7.deferredInstallPrompt = e;
+                    console.log('Saving beforeinstallprompt: ', e);
+                });
             }
 
             Abalytics.init(f7);

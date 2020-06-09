@@ -117,18 +117,31 @@
         },
         // Component Methods
         methods: {
+            dateParse: function(dateString) {
+                var parts = dateString.split('/');
+
+                if(parts.length < 3) {
+                    return 0;
+                }
+
+                var num = parseInt(parts[0], 10) + parseInt(parts[1], 10) * 30 + parseInt(parts[2], 10) * 1000;
+                return num;
+            },
+
             getLatestStatByPlaceKey: function(placeKey, data) {
-                var latest = null;
+                var latest = data[0];
 
-                data.map(function(entry) {
+                for(var i = 0; i < data.length; i++) {
+                    var entry = data[i];
+
                     if(entry.place_key != placeKey) {
-                        return;
+                        continue;
                     }
-
-                    if(latest == null || latest.date.localeCompare(entry.date) <= 0) {
+                    
+                    if(this.dateParse(entry.date) > this.dateParse(latest.date)) {
                         latest = entry;
                     }
-                })
+                }
 
                 return latest;
             },

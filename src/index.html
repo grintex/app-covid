@@ -27,7 +27,16 @@
     <meta name="theme-color" content="#006f3c">
     <meta name="format-detection" content="telephone=no">
     <meta name="msapplication-tap-highlight" content="no">
-    <title>coronavirus-chapeco</title>
+    
+    <title>Coronavírus Chapecó</title>
+
+    <% if (process.env.TARGET === 'web') { %>
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <link rel="apple-touch-icon" href="static/icons/apple-touch-icon.png">
+        <link rel="icon" href="static/icons/favicon.png">
+        <link rel="manifest" href="/manifest.json">
+    <% } %>
 
 
 

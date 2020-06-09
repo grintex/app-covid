@@ -12,6 +12,10 @@
     "build-prod": "cross-env NODE_ENV=production node ./build/build.js",
     "build-dev-cordova": "cross-env TARGET=cordova cross-env NODE_ENV=development node ./build/build.js && cd cordova && cordova build --debug",
     "build-prod-cordova": "cross-env TARGET=cordova cross-env NODE_ENV=production node ./build/build.js && cd cordova && cordova build --release",
+    "build-dev-cordova-ios": "cross-env TARGET=cordova cross-env NODE_ENV=development node ./build/build.js && cd cordova && cordova build ios --debug",
+    "build-prod-cordova-ios": "cross-env TARGET=cordova cross-env NODE_ENV=production node ./build/build.js && cd cordova && cordova build ios --release",
+    "build-dev-cordova-android": "cross-env TARGET=cordova cross-env NODE_ENV=development node ./build/build.js && cd cordova && cordova build android --debug",
+    "build-prod-cordova-android": "cross-env TARGET=cordova cross-env NODE_ENV=production node ./build/build.js && cd cordova && cordova build android --release",
     "postinstall": "cpy ./node_modules/framework7-icons/fonts/*.* ./src/fonts/"
   },
   "browserslist": [
@@ -26,7 +30,8 @@
     "dom7": "^2.1.3",
     "framework7": "^5.7.0",
     "framework7-icons": "^3.0.0",
-    "template7": "^1.4.2"
+    "template7": "^1.4.2",
+    "uuid": "^8.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
@@ -34,9 +39,11 @@
     "@babel/plugin-transform-runtime": "^7.9.0",
     "@babel/preset-env": "^7.9.5",
     "@babel/runtime": "^7.9.2",
+    "@rollup/plugin-replace": "^2.3.3",
+    "@rollup/pluginutils": "^3.1.0",
     "babel-loader": "^8.1.0",
     "chalk": "^4.0.0",
-    "copy-webpack-plugin": "^5.1.1",
+    "copy-webpack-plugin": "^6.0.0",
     "cpy-cli": "^3.1.0",
     "cross-env": "^7.0.2",
     "css-loader": "^3.5.3",
@@ -54,6 +61,7 @@
     "url-loader": "^4.1.0",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "^3.10.3"
+    "webpack-dev-server": "^3.10.3",
+    "workbox-webpack-plugin": "^5.1.3"
   }
 }
