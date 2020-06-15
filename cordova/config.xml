@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="cc.uffs.extension.covid" version="0.2.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>coronavirus-chapeco</name>
+<widget id="cc.uffs.extension.covid" version="0.3.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Coronavírus Chapecó</name>
     <description>
         Aplicativo para orientação e informação da população sobre medidas de prevenção contra a infecção pelo novo Coronavírus, com foco em Chapecó/SC.
     </description>

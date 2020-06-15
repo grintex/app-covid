@@ -83,7 +83,7 @@
             </div>
 
             <div class="menu-grid">
-                <% if (process.env.TARGET === 'web') { %>
+                <!--<% if (process.env.TARGET === 'web') { %>-->
                     {{#if notInstalled}}
                     <a href="#" @click="install" class="menu-grid__item small" id="link-install-app">
                         <div class="item-inner">
@@ -92,7 +92,7 @@
                         </div>
                     </a>
                     {{/if}}
-                <% } %>
+                <!--<% } %>-->
 
                 {{#if shareAd}}
                 <a href="#" @click="share" class="menu-grid__item small">
