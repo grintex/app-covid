@@ -1,7 +1,7 @@
 {
   "name": "coronavirus-chapeco",
   "private": true,
-  "version": "1.0.0",
+  "version": "0.4.0",
   "description": "coronavirus-chapeco",
   "repository": "",
   "license": "UNLICENSED",
@@ -15,7 +15,8 @@
     "build-dev-cordova-ios": "cross-env TARGET=cordova cross-env NODE_ENV=development node ./build/build.js && cd cordova && cordova build ios --debug",
     "build-prod-cordova-ios": "cross-env TARGET=cordova cross-env NODE_ENV=production node ./build/build.js && cd cordova && cordova build ios --release",
     "build-dev-cordova-android": "cross-env TARGET=cordova cross-env NODE_ENV=development node ./build/build.js && cd cordova && cordova build android --debug",
-    "build-prod-cordova-android": "cross-env TARGET=cordova cross-env NODE_ENV=production node ./build/build.js && cd cordova && cordova build android --release",
+    "build-prod-cordova-android": "cross-env TARGET=cordova cross-env NODE_ENV=production PYTHON=C:/Python38 node ./build/build.js && cd cordova && cordova build android --release",
+    "android-app-bundle": "cd cordova && cd platforms && cd android && gradlew bundle",
     "postinstall": "cpy ./node_modules/framework7-icons/fonts/*.* ./src/fonts/"
   },
   "browserslist": [
