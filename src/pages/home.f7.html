@@ -83,16 +83,14 @@
             </div>
 
             <div class="menu-grid">
-                <!--<% if (process.env.TARGET === 'web') { %>-->
-                    {{#if notInstalled}}
-                    <a href="#" @click="install" class="menu-grid__item small" id="link-install-app">
-                        <div class="item-inner">
-                            <i class="material-icons">get_app</i>
-                            <div class="item-title">Instalar / adicionar à tela inicial</div>
-                        </div>
-                    </a>
-                    {{/if}}
-                <!--<% } %>-->
+                {{#if installAd }}
+                <a href="#" @click="install" class="menu-grid__item small" id="link-install-app">
+                    <div class="item-inner">
+                        <i class="material-icons">get_app</i>
+                        <div class="item-title">Instalar / adicionar à tela inicial</div>
+                    </div>
+                </a>
+                {{/if}}
 
                 {{#if shareAd}}
                 <a href="#" @click="share" class="menu-grid__item small">
@@ -108,14 +106,16 @@
 </template>
 
 <script>
+    import IsEnabled from '../js/isenabled.js';
+
     export default {
         data: function() {
             return {
                 appShareURL: 'https://uffs.cc/app-covid-chapeco',
-                notInstalled: function() {
-                    return !window.matchMedia('(display-mode: standalone)').matches;
+                installAd: function() {
+                    return !window.matchMedia('(display-mode: standalone)').matches && IsEnabled.installAd;
                 },
-                shareAd: false
+                shareAd: IsEnabled.shareAd
             }
         },
 
