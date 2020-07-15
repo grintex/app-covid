@@ -1,0 +1,164 @@
+<template>
+    <div class="page" data-name="infected">
+        <div class="navbar">
+            <div class="navbar-bg"></div>
+            <div class="navbar-inner sliding">
+                <div class="left">
+                    <a href="#" class="link back">
+                        <i class="icon icon-back"></i>
+                        <span class="if-not-md">Voltar</span>
+                    </a>
+                </div>
+                <div class="title">Dicas</div>
+            </div>
+        </div>
+
+        <!-- Load Facebook SDK for JavaScript -->
+        <script async defer src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2"></script>
+
+        <div class="page-content">
+            <div class="block">
+                <div class="list media-list prevention-list">
+                    <ul>
+                        <li>
+                            <div class="item-content margin-top-half">
+                                <div class="item-media">
+                                    <img src="static/images/hand-wash.svg" alt="hand-wash" height="60">
+                                </div>
+                                <div class="item-inner">
+                                    <div class="item-title">Lavar mãos</div>
+                                    <div class="item-text">
+                                        Aprenda a lavar as mãos corretamente.
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="block">
+                <div class="item-content">
+                    <div class="reponsive reponsive--16x9">
+                        <iframe class="reponsive__item" src="https://www.youtube.com/embed/krSDE0_KBMs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <div class="block">
+                <div class="list media-list prevention-list">
+                    <ul>
+                        <li>
+                            <div class="item-content margin-top-half">
+                                <div class="item-media">
+                                    <img src="static/images/medical-mask.svg" alt="medical-mask" height="60">
+                                </div>
+                                <div class="item-inner">
+                                    <div class="item-title">Máscara</div>
+                                    <div class="item-text">
+                                        Como fazer sua máscara.
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="block">
+                <div class="item-content">
+                    <div class="reponsive reponsive--16x9">
+                        <iframe class="reponsive__item" src="https://www.youtube.com/embed/VNYEgEWrJKw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <div class="block">
+                <div class="list media-list prevention-list">
+                    <ul>
+                        <li>
+                            <div class="item-content margin-top-half">
+                                <div class="item-media">
+                                    <img src="static/images/physical.svg" alt="physical" height="60">
+                                </div>
+                                <div class="item-inner">
+                                    <div class="item-title">Evitar propagação</div>
+                                    <div class="item-text">
+                                        10 passos para evitar a propagação do coronavírus.
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="block">
+                <div class="item-content">
+                    <div class="reponsive">
+                        <!-- Your embedded video player code -->
+                        <div class="fb-video" data-href="https://www.facebook.com/prefeituradechapeco/videos/232176374773455/" data-width="500" data-show-text="false">
+                            <div class="fb-xfbml-parse-ignore">
+                                <blockquote cite="https://www.facebook.com/prefeituradechapeco/videos/232176374773455/">
+                                <a href="https://www.facebook.com/prefeituradechapeco/videos/232176374773455/">Prefeitura de Chapecó (Oficial)</a>
+                                </blockquote>
+                            </div>
+                        </div>
+                        <div id="fb-root"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="block">
+                <div class="list media-list prevention-list">
+                    <ul>
+                        <li>
+                            <div class="item-content margin-top-half">
+                                <div class="item-media">
+                                    <img src="static/images/cough-cancel.svg" alt="cough-cancel" height="60">
+                                </div>
+                                <div class="item-inner">
+                                    <div class="item-title">Etiqueta respiratória</div>
+                                    <div class="item-text">
+                                        Ao tossir ou espirrar, cubra nariz e boca com lenço ou com o braço</p>
+                                    </div>
+                                    <div class="item-text">
+                                        e não com as mãos.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="block">
+                <div class="item-content">
+                    <div class="reponsive reponsive--16x9">
+                        <iframe class="reponsive__item" src="https://www.youtube.com/embed/aEZY2n5wkks" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</template>
+<script>
+    export default {};
+</script>
+
+<style>
+    .reponsive {
+        position: relative;
+    }
+
+    .reponsive--16x9 {
+        padding-top: 56.25%
+            /* 9/16 */
+        ;
+    }
+
+    .reponsive__item {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+    }
+</style>
