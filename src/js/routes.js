@@ -3,7 +3,7 @@ import AboutCovidPage from '../pages/about-covid.f7.html';
 import InfectedPage from '../pages/infected.f7.html';
 import InfectedQuizPage from '../pages/infected-quiz.f7.html';
 import DiagnosisPage from '../pages/diagnosis.f7.html';
-import MaskPage from '../pages/mask.f7.html';
+import TipsPage from '../pages/tips.f7.html';
 import NewsPage from '../pages/news.f7.html';
 import PreventionPage from '../pages/prevention.f7.html';
 import RiskGroupPage from '../pages/risk-group.f7.html';
@@ -138,8 +138,8 @@ var routes = [
     },
 
     {
-        path: '/mask/',
-        component: MaskPage
+        path: '/tips/',
+        component: TipsPage
     },
 
     {
